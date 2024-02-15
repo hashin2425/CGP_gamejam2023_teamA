@@ -4,5 +4,14 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Heima/Scenes/Test_Title.unity
+    guid: 9dcd3607c0924ae47808af0587d2546c
+  - enabled: 1
+    path: Assets/Heima/Scenes/Test_Menu.unity
+    guid: c7586cc6e1d2f8240b416b71e0a6c33c
+  - enabled: 1
+    path: Assets/Heima/Scenes/Test_Heima.unity
+    guid: 67d5264a8997b564281647ce98e05b8b
   m_configObjects: {}
