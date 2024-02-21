@@ -4,9 +4,9 @@ using UnityEngine;
 
 public class EnemyActions : MonoBehaviour
 {
-    public float speed = 5.0f;
+    public float movementSpeed = 5.0f;
     public float changeDirectionInterval = 2.0f;
-    public BoxCollider collider;
+    public BoxCollider enemyCollider;
     public float rotationDuration = 1.0f;
 
     private float timer;
@@ -39,7 +39,7 @@ public class EnemyActions : MonoBehaviour
 
     private void MoveForward()
     {
-        transform.position += transform.forward * speed * Time.deltaTime;
+        transform.position += transform.forward * movementSpeed * Time.deltaTime;
     }
 
     private void ChangeDirection()
@@ -68,10 +68,10 @@ public class EnemyActions : MonoBehaviour
 
     private bool HasCollision()
     {
-        Collider[] colliders = Physics.OverlapBox(collider.bounds.center, collider.bounds.extents, transform.rotation);
+        Collider[] colliders = Physics.OverlapBox(enemyCollider.bounds.center, enemyCollider.bounds.extents, transform.rotation);
         foreach (Collider col in colliders)
         {
-            if (col.CompareTag("Wall"))
+            if ((col.CompareTag("Wall") || col.CompareTag("Enemy")) && col != enemyCollider)
             {
                 return true;
             }
