@@ -3,16 +3,15 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
-using UnityEngine.SceneManagement;
-
+using static GameData.Settings;
 public class GManager : MonoBehaviour
 {
     private static GManager instance;
-    public static GManager Instance => instance; //ëºÇÃÉXÉNÉäÉvÉgÇ©ÇÁÇÃÉAÉNÉZÉXóp
+    public static GManager Instance => instance; //‰ªñ„ÅÆ„Çπ„ÇØ„É™„Éó„Éà„Åã„Çâ„ÅÆ„Ç¢„ÇØ„Çª„ÇπÁî®
     private GManager() { }
     void Awake()
     {
-        //GManagerÇÃÉCÉìÉXÉ^ÉìÉXÇ™1Ç¬Ç≈Ç†ÇÈÇ±Ç∆Çï€èÿ
+        //GManager„ÅÆ„Ç§„É≥„Çπ„Çø„É≥„Çπ„Åå1„Å§„Åß„ÅÇ„Çã„Åì„Å®„Çí‰øùË®º
         if (instance == null)
         {
             instance = this;
@@ -21,17 +20,18 @@ public class GManager : MonoBehaviour
         {
             Destroy(gameObject);
         }
-        //èâä˙âª
+        //ÂàùÊúüÂåñ
         Init();
     }
     [SerializeField] TextMeshProUGUI countdownText;
+    [SerializeField] TextMeshProUGUI scoreText;
     [SerializeField] GameObject pauseUI;
     [SerializeField] GameObject gameOverUI;
     [SerializeField] GameObject gameClearUI;
-    private readonly float TIME_LIMIT_SEC = 30.0f;
     private float countdownSec;
-    private bool isPause;
     private Coroutine countdownCoroutine;
+    private GameState currentGameState;
+    public GameState CurrentGameState => currentGameState;
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.Escape))
@@ -39,51 +39,75 @@ public class GManager : MonoBehaviour
             TogglePause();
         }
     }
-    //èâä˙âªèàóù
+    //„Ç≤„Éº„É†Áä∂ÊÖã„ÅÆÂ§âÊõ¥
+    public void ChangeGameState(GameState state)
+    {
+        Debug.Log("Current Game State:" + state);
+        currentGameState = state;
+        OnGameStateChanged(state);
+    }
+    //„Ç≤„Éº„É†Áä∂ÊÖã„ÅåÂ§â„Çè„Å£„ÅüÊôÇ„ÅÆÂá¶ÁêÜ
+    void OnGameStateChanged(GameState state)
+    {
+        switch (state)
+        {
+            case GameState.GameOver:
+                gameOverUI.SetActive(true); break;
+            case GameState.GameClear:
+                StopCountdownCoroutine();
+                gameClearUI.SetActive(true); break;
+            default: break;
+        }
+    }
+    //ÂàùÊúüÂåñÂá¶ÁêÜ
     void Init()
     {
         Debug.Log("initialize");
         Time.timeScale = 1;
-        isPause = false;
         countdownSec = TIME_LIMIT_SEC;
         SetCountdownText(countdownSec);
-        countdownCoroutine = StartCoroutine(CountDown());
+        ChangeGameState(GameState.Playing);
+        countdownCoroutine = StartCoroutine(Countdown());
     }
-    //ÉJÉEÉìÉgÉ_ÉEÉìÇÃï\é¶Çê›íË
+    //„Ç´„Ç¶„É≥„Éà„ÉÄ„Ç¶„É≥„ÅÆË°®Á§∫„ÇíË®≠ÂÆö
     void SetCountdownText(float sec)
     {
         var span = new TimeSpan(0, 0, (int)sec);
         countdownText.text = span.ToString(@"mm\:ss");
     }
-    //É|Å[ÉYÇÃêÿÇËë÷Ç¶
+    //„Ç¢„Ç§„ÉÜ„É†Êãæ„Å£„ÅüÊôÇ„ÅÆÂá¶ÁêÜ, „Åæ„Å†
+    public void CollectItem()
+    {
+    }
+    //„Éù„Éº„Ç∫„ÅÆÂàá„ÇäÊõø„Åà
     public void TogglePause()
     {
-        if (!isPause)
+        switch (currentGameState)
         {
-            isPause = true;
-            pauseUI.SetActive(true);
-            Time.timeScale = 0;
-            Debug.Log("Pause");
-        }
-        else
-        {
-            isPause = false;
-            pauseUI.SetActive(false);
-            Time.timeScale = 1;
-            Debug.Log("UnPause");
+            case GameState.Playing:
+                ChangeGameState(GameState.Pause);
+                pauseUI.SetActive(true);
+                Time.timeScale = 0;
+                Debug.Log("Pause");
+                break;
+            case GameState.Pause:
+                ChangeGameState(GameState.Playing);
+                pauseUI.SetActive(false);
+                Time.timeScale = 1;
+                Debug.Log("UnPause");
+                break;
+            default : break;
         }
     }
-    public void StopCountdownCoroutine()
-    {
-        StopCoroutine(countdownCoroutine);
-    } 
-    //ÉJÉEÉìÉgÉ_ÉEÉìÇ∑ÇÈÉRÉãÅ[É`Éì
-    IEnumerator CountDown()
+    //„Ç´„Ç¶„É≥„Éà„ÉÄ„Ç¶„É≥„ÅÆ„Ç≥„É´„Éº„ÉÅ„É≥„ÇíÊ≠¢„ÇÅ„Çã
+    public void StopCountdownCoroutine() => StopCoroutine(countdownCoroutine);
+    //„Ç´„Ç¶„É≥„Éà„ÉÄ„Ç¶„É≥„Åô„Çã„Ç≥„É´„Éº„ÉÅ„É≥
+    IEnumerator Countdown()
     {
         Debug.Log("StartCoroutine");
         while (countdownSec > 0)
         {
-            if (!isPause)
+            if (currentGameState == GameState.Playing)
             {
                 yield return new WaitForSeconds(1.0f);
                 countdownSec -= 1.0f;
@@ -95,7 +119,9 @@ public class GManager : MonoBehaviour
                 yield return null;
             }
         }
-        //ÉQÅ[ÉÄÉIÅ[ÉoÅ[
+        //„Ç≤„Éº„É†„Ç™„Éº„Éê„Éº
         Debug.Log("GameOver");
+        ChangeGameState(GameState.GameOver);
+        yield break;
     }
 }

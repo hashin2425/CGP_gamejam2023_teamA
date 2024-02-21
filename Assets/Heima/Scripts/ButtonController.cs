@@ -10,9 +10,9 @@ public class ButtonController : MonoBehaviour
         switch (buttonName)
         {
             case "stage":
-                SceneManager.LoadScene("Test_Heima"); break;
+                SceneManager.LoadScene(""); break;
             case "menu":
-                SceneManager.LoadScene("Test_Menu"); break;
+                SceneManager.LoadScene(""); break;
             case "restart":
                 GManager.Instance.StopCountdownCoroutine();
                 SceneManager.LoadScene(SceneManager.GetActiveScene().name); break;
