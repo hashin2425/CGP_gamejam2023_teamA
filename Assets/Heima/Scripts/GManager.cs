@@ -3,8 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
-using UnityEngine.SceneManagement;
-
+using static GameData.Settings;
 public class GManager : MonoBehaviour
 {
     private static GManager instance;
@@ -25,13 +24,14 @@ public class GManager : MonoBehaviour
         Init();
     }
     [SerializeField] TextMeshProUGUI countdownText;
+    [SerializeField] TextMeshProUGUI scoreText;
     [SerializeField] GameObject pauseUI;
     [SerializeField] GameObject gameOverUI;
     [SerializeField] GameObject gameClearUI;
-    private readonly float TIME_LIMIT_SEC = 30.0f;
     private float countdownSec;
-    private bool isPause;
     private Coroutine countdownCoroutine;
+    private GameState currentGameState;
+    public GameState CurrentGameState => currentGameState;
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.Escape))
@@ -39,15 +39,35 @@ public class GManager : MonoBehaviour
             TogglePause();
         }
     }
+    //ゲーム状態の変更
+    public void ChangeGameState(GameState state)
+    {
+        Debug.Log("Current Game State:" + state);
+        currentGameState = state;
+        OnGameStateChanged(state);
+    }
+    //ゲーム状態が変わった時の処理
+    void OnGameStateChanged(GameState state)
+    {
+        switch (state)
+        {
+            case GameState.GameOver:
+                gameOverUI.SetActive(true); break;
+            case GameState.GameClear:
+                StopCountdownCoroutine();
+                gameClearUI.SetActive(true); break;
+            default: break;
+        }
+    }
     //初期化処理
     void Init()
     {
         Debug.Log("initialize");
         Time.timeScale = 1;
-        isPause = false;
         countdownSec = TIME_LIMIT_SEC;
         SetCountdownText(countdownSec);
-        countdownCoroutine = StartCoroutine(CountDown());
+        ChangeGameState(GameState.Playing);
+        countdownCoroutine = StartCoroutine(Countdown());
     }
     //カウントダウンの表示を設定
     void SetCountdownText(float sec)
@@ -55,35 +75,39 @@ public class GManager : MonoBehaviour
         var span = new TimeSpan(0, 0, (int)sec);
         countdownText.text = span.ToString(@"mm\:ss");
     }
+    //アイテム拾った時の処理, まだ
+    public void CollectItem()
+    {
+    }
     //ポーズの切り替え
     public void TogglePause()
     {
-        if (!isPause)
+        switch (currentGameState)
         {
-            isPause = true;
-            pauseUI.SetActive(true);
-            Time.timeScale = 0;
-            Debug.Log("Pause");
-        }
-        else
-        {
-            isPause = false;
-            pauseUI.SetActive(false);
-            Time.timeScale = 1;
-            Debug.Log("UnPause");
+            case GameState.Playing:
+                ChangeGameState(GameState.Pause);
+                pauseUI.SetActive(true);
+                Time.timeScale = 0;
+                Debug.Log("Pause");
+                break;
+            case GameState.Pause:
+                ChangeGameState(GameState.Playing);
+                pauseUI.SetActive(false);
+                Time.timeScale = 1;
+                Debug.Log("UnPause");
+                break;
+            default : break;
         }
     }
-    public void StopCountdownCoroutine()
-    {
-        StopCoroutine(countdownCoroutine);
-    } 
+    //カウントダウンのコルーチンを止める
+    public void StopCountdownCoroutine() => StopCoroutine(countdownCoroutine);
     //カウントダウンするコルーチン
-    IEnumerator CountDown()
+    IEnumerator Countdown()
     {
         Debug.Log("StartCoroutine");
         while (countdownSec > 0)
         {
-            if (!isPause)
+            if (currentGameState == GameState.Playing)
             {
                 yield return new WaitForSeconds(1.0f);
                 countdownSec -= 1.0f;
@@ -97,5 +121,7 @@ public class GManager : MonoBehaviour
         }
         //ゲームオーバー
         Debug.Log("GameOver");
+        ChangeGameState(GameState.GameOver);
+        yield break;
     }
 }
