@@ -7,11 +7,11 @@ using static GameData.Settings;
 public class GManager : MonoBehaviour
 {
     private static GManager instance;
-    public static GManager Instance => instance; //‘¼‚ÌƒXƒNƒŠƒvƒg‚©‚ç‚ÌƒAƒNƒZƒX—p
+    public static GManager Instance => instance; //ä»–ã®ã‚¹ã‚¯ãƒªãƒ—ãƒˆã‹ã‚‰ã®ã‚¢ã‚¯ã‚»ã‚¹ç”¨
     private GManager() { }
     void Awake()
     {
-        //GManager‚ÌƒCƒ“ƒXƒ^ƒ“ƒX‚ª1‚Â‚Å‚ ‚é‚±‚Æ‚ğ•ÛØ
+        //GManagerã®ã‚¤ãƒ³ã‚¹ã‚¿ãƒ³ã‚¹ãŒ1ã¤ã§ã‚ã‚‹ã“ã¨ã‚’ä¿è¨¼
         if (instance == null)
         {
             instance = this;
@@ -20,7 +20,7 @@ public class GManager : MonoBehaviour
         {
             Destroy(gameObject);
         }
-        //‰Šú‰»
+        //åˆæœŸåŒ–
         Init();
     }
     [SerializeField] TextMeshProUGUI countdownText;
@@ -39,14 +39,14 @@ public class GManager : MonoBehaviour
             TogglePause();
         }
     }
-    //ƒQ[ƒ€ó‘Ô‚Ì•ÏX
+    //ã‚²ãƒ¼ãƒ çŠ¶æ…‹ã®å¤‰æ›´
     public void ChangeGameState(GameState state)
     {
         Debug.Log("Current Game State:" + state);
         currentGameState = state;
         OnGameStateChanged(state);
     }
-    //ƒQ[ƒ€ó‘Ô‚ª•Ï‚í‚Á‚½‚Ìˆ—
+    //ã‚²ãƒ¼ãƒ çŠ¶æ…‹ãŒå¤‰ã‚ã£ãŸæ™‚ã®å‡¦ç†
     void OnGameStateChanged(GameState state)
     {
         switch (state)
@@ -59,7 +59,7 @@ public class GManager : MonoBehaviour
             default: break;
         }
     }
-    //‰Šú‰»ˆ—
+    //åˆæœŸåŒ–å‡¦ç†
     void Init()
     {
         Debug.Log("initialize");
@@ -69,17 +69,17 @@ public class GManager : MonoBehaviour
         ChangeGameState(GameState.Playing);
         countdownCoroutine = StartCoroutine(Countdown());
     }
-    //ƒJƒEƒ“ƒgƒ_ƒEƒ“‚Ì•\¦‚ğİ’è
+    //ã‚«ã‚¦ãƒ³ãƒˆãƒ€ã‚¦ãƒ³ã®è¡¨ç¤ºã‚’è¨­å®š
     void SetCountdownText(float sec)
     {
         var span = new TimeSpan(0, 0, (int)sec);
         countdownText.text = span.ToString(@"mm\:ss");
     }
-    //ƒAƒCƒeƒ€E‚Á‚½‚Ìˆ—, ‚Ü‚¾
+    //ã‚¢ã‚¤ãƒ†ãƒ æ‹¾ã£ãŸæ™‚ã®å‡¦ç†, ã¾ã 
     public void CollectItem()
     {
     }
-    //ƒ|[ƒY‚ÌØ‚è‘Ö‚¦
+    //ãƒãƒ¼ã‚ºã®åˆ‡ã‚Šæ›¿ãˆ
     public void TogglePause()
     {
         switch (currentGameState)
@@ -99,9 +99,9 @@ public class GManager : MonoBehaviour
             default : break;
         }
     }
-    //ƒJƒEƒ“ƒgƒ_ƒEƒ“‚ÌƒRƒ‹[ƒ`ƒ“‚ğ~‚ß‚é
+    //ã‚«ã‚¦ãƒ³ãƒˆãƒ€ã‚¦ãƒ³ã®ã‚³ãƒ«ãƒ¼ãƒãƒ³ã‚’æ­¢ã‚ã‚‹
     public void StopCountdownCoroutine() => StopCoroutine(countdownCoroutine);
-    //ƒJƒEƒ“ƒgƒ_ƒEƒ“‚·‚éƒRƒ‹[ƒ`ƒ“
+    //ã‚«ã‚¦ãƒ³ãƒˆãƒ€ã‚¦ãƒ³ã™ã‚‹ã‚³ãƒ«ãƒ¼ãƒãƒ³
     IEnumerator Countdown()
     {
         Debug.Log("StartCoroutine");
@@ -119,7 +119,7 @@ public class GManager : MonoBehaviour
                 yield return null;
             }
         }
-        //ƒQ[ƒ€ƒI[ƒo[
+        //ã‚²ãƒ¼ãƒ ã‚ªãƒ¼ãƒãƒ¼
         Debug.Log("GameOver");
         ChangeGameState(GameState.GameOver);
         yield break;
