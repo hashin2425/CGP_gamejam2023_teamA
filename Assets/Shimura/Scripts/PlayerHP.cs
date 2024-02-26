@@ -4,32 +4,65 @@ using UnityEngine;
 
 public class PlayerHP : MonoBehaviour
 {
-    [Header("プレイヤーのHPの数")] public int HP;
-    [SerializeField] GameObject heartImage1;
-    [SerializeField] GameObject heartImage2;
-    [SerializeField] GameObject heartImage3;
+    [Header("プレイヤーのHPの数")] public int HP = 3;
+    [SerializeField] GameObject HPImage;
+    [SerializeField] GameObject GamePanel;
+    GameObject[] HPImages = new GameObject[100];
+    bool muteki = false;
     void Start()
     {
-        
+        DisplayHPImage();
     }
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.P))
+        
+    }
+    //HPが減った時の処理の関数
+    public void DecreaseHp()
+    {
+        if (!muteki)
         {
             HP--;
+            DestroyHPImage();
+            DisplayHPImage();
+            muteki = true;
+            Invoke("Mutekijikan",3.0f);
         }
-        if (HP==2)
+    }
+    //HPが増えた時の処理の関数
+    public void IncreaseHp()
+    {
+        DestroyHPImage();
+        HP++;
+        DisplayHPImage();
+    }
+
+    //HPを画面上に表示させる関数
+    void DisplayHPImage()
+    {
+        HP = Mathf.Clamp(HP,0,3);
+        for (int i = 0; i < HP; i++)
         {
-            heartImage3.SetActive(true);
+            HPImages[i] = Instantiate(HPImage, new Vector3(i*75,0,0), Quaternion.identity);
+            HPImages[i].transform.SetParent (GamePanel.transform, false);
         }
-        else if (HP==1)
+    }
+
+    //HPを画面上から破壊
+    void DestroyHPImage()
+    {
+        for (int i = 0; i <= HP; i++)
         {
-            heartImage2.SetActive(true);
+            Destroy(HPImages[i]);
         }
-        else if (HP==0)
-        {
-            heartImage1.SetActive(true);
-        }
+    }
+
+
+
+    //無敵時間
+    void Mutekijikan()
+    {
+        muteki=false;
     }
 }

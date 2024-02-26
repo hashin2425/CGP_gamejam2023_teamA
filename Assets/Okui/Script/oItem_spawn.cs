@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Item_spawn : MonoBehaviour
+public class oItem_spawn : MonoBehaviour
 {
     [SerializeField] GameObject[] spawnPoint;
     [SerializeField] GameObject Item;
