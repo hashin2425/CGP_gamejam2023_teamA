@@ -3,7 +3,8 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
-using static GameData.Settings;
+using UnityEngine.SceneManagement;
+using static GameData.ConstSettings;
 public class GManager : MonoBehaviour
 {
     private static GManager instance;
@@ -15,28 +16,36 @@ public class GManager : MonoBehaviour
         if (instance == null)
         {
             instance = this;
+            DontDestroyOnLoad(gameObject);
         }
         else
         {
             Destroy(gameObject);
         }
-        //初期化
-        Init();
     }
-    [SerializeField] TextMeshProUGUI countdownText;
-    [SerializeField] TextMeshProUGUI scoreText;
-    [SerializeField] GameObject pauseUI;
-    [SerializeField] GameObject gameOverUI;
-    [SerializeField] GameObject gameClearUI;
+    void Start()
+    {
+        SceneManager.sceneLoaded += SceneLoaded;
+        currentGameState = GameState.GameClear;
+    }
     private float countdownSec;
+    private int score;
+    public int Score => score;
+    private UIManager uiManager;
     private Coroutine countdownCoroutine;
+    private List<Items> itemList;
     private GameState currentGameState;
+    public float CountdownSec => countdownSec;
     public GameState CurrentGameState => currentGameState;
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.Escape))
         {
             TogglePause();
+        }
+        if (Input.GetKeyDown(KeyCode.C))
+        {
+            ChangeGameState(GameState.GameClear);
         }
     }
     //ゲーム状態の変更
@@ -52,32 +61,42 @@ public class GManager : MonoBehaviour
         switch (state)
         {
             case GameState.GameOver:
-                gameOverUI.SetActive(true); break;
+                uiManager.ActionGameOver(); break;
             case GameState.GameClear:
                 StopCountdownCoroutine();
-                gameClearUI.SetActive(true); break;
+                uiManager.ActionGameClear(); break;
             default: break;
         }
     }
     //初期化処理
-    void Init()
+    void Initialize()
     {
         Debug.Log("initialize");
-        Time.timeScale = 1;
+        uiManager = UIManager.Instance;
         countdownSec = TIME_LIMIT_SEC;
-        SetCountdownText(countdownSec);
+        score = 0;
+        itemList = new List<Items>();
         ChangeGameState(GameState.Playing);
+        if (countdownCoroutine!=null) StopCountdownCoroutine();
         countdownCoroutine = StartCoroutine(Countdown());
     }
-    //カウントダウンの表示を設定
-    void SetCountdownText(float sec)
+    //アイテム拾った時の処理
+    public void CollectItem(Items item)
     {
-        var span = new TimeSpan(0, 0, (int)sec);
-        countdownText.text = span.ToString(@"mm\:ss");
+        itemList.Add(item);
+        switch (item)
+        {
+            case Items.Mouse:
+                score += 200; break;
+            default :
+                score += DEFAULT_ITEM_SCORE; break;
+        }
     }
-    //アイテム拾った時の処理, まだ
-    public void CollectItem()
+    //シーン読み込みのイベントハンドラ
+    void SceneLoaded(Scene scene, LoadSceneMode mode)
     {
+        if (Time.timeScale == 0) Time.timeScale = 1;
+        if (scene.name == "Test_Heima") Initialize();
     }
     //ポーズの切り替え
     public void TogglePause()
@@ -86,13 +105,13 @@ public class GManager : MonoBehaviour
         {
             case GameState.Playing:
                 ChangeGameState(GameState.Pause);
-                pauseUI.SetActive(true);
+                uiManager.ShowPauseUI(true);
                 Time.timeScale = 0;
                 Debug.Log("Pause");
                 break;
             case GameState.Pause:
                 ChangeGameState(GameState.Playing);
-                pauseUI.SetActive(false);
+                uiManager.ShowPauseUI(false);
                 Time.timeScale = 1;
                 Debug.Log("UnPause");
                 break;
@@ -111,7 +130,7 @@ public class GManager : MonoBehaviour
             {
                 yield return new WaitForSeconds(1.0f);
                 countdownSec -= 1.0f;
-                SetCountdownText(countdownSec);
+                uiManager.SetCountdownText(countdownSec);
                 Debug.Log("Time Limit: " + countdownSec);
             }
             else

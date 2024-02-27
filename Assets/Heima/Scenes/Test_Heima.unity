@@ -1442,6 +1442,55 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 400657534}
   m_CullTransparentMesh: 1
+--- !u!1 &477190497
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 477190499}
+  - component: {fileID: 477190498}
+  m_Layer: 0
+  m_Name: UIManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &477190498
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 477190497}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9d4ec9d0b29f8b240bcd49286f5017fd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  countdownText: {fileID: 296212388}
+  scoreText: {fileID: 2062556261}
+  pauseUI: {fileID: 44783163}
+  gameOverUI: {fileID: 364892617}
+  gameClearUI: {fileID: 2126982973}
+--- !u!4 &477190499
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 477190497}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &479508688
 GameObject:
   m_ObjectHideFlags: 0
@@ -1600,6 +1649,7 @@ GameObject:
   - component: {fileID: 527159326}
   - component: {fileID: 527159325}
   - component: {fileID: 527159324}
+  - component: {fileID: 527159327}
   m_Layer: 5
   m_Name: MenuButton
   m_TagString: Untagged
@@ -1670,7 +1720,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 527159325}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 527159327}
+        m_TargetAssemblyTypeName: ButtonController, Assembly-CSharp
+        m_MethodName: OnButtonClicked
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: menu
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &527159325
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1709,6 +1771,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 527159322}
   m_CullTransparentMesh: 1
+--- !u!114 &527159327
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 527159322}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0c2eeccb5a9c0ea4c990c1c13723bcc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &586595785
 GameObject:
   m_ObjectHideFlags: 0
@@ -3413,7 +3487,6 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
-
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
@@ -3433,8 +3506,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4281479730
-  m_fontColor: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
+    rgba: 4278190080
+  m_fontColor: {r: 0, g: 0, b: 0, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -5124,11 +5197,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 50ff6b3c3d9584c4bbe21a9198e358b9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  countdownText: {fileID: 296212388}
-  scoreText: {fileID: 2062556261}
-  pauseUI: {fileID: 44783163}
-  gameOverUI: {fileID: 364892617}
-  gameClearUI: {fileID: 2126982973}
 --- !u!1 &2126982973
 GameObject:
   m_ObjectHideFlags: 0
@@ -5247,3 +5315,4 @@ SceneRoots:
   - {fileID: 44783167}
   - {fileID: 364892621}
   - {fileID: 2126982977}
+  - {fileID: 477190499}
