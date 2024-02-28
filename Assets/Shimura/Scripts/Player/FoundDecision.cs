@@ -23,20 +23,21 @@ public class FoundDecision : MonoBehaviour
         {
             Ray ray = new Ray(transform.position, other.gameObject.transform.position - transform.position);
             RaycastHit hit;
-            if (Physics.Raycast(ray, out hit, 100f, 1))
+            var layerMask = LayerMask.NameToLayer("Player");
+            Debug.DrawRay(ray.origin, ray.direction * 15, Color.red, 0.5f);
+            if (Physics.Raycast(ray, out hit, Mathf.Infinity, ~layerMask) && Physics.Raycast(ray, out hit))
             {
-                Debug.DrawRay(ray.origin, ray.direction * 15, Color.red, 0.5f);
-                Debug.Log(hit.collider.name);
+                //Debug.Log(hit.collider.name);
                 if(hit.collider.CompareTag("Eye"))
                 {
                     //Debug.Log("目が合った!!");
-                    EventSystem.gameObject.GetComponent<PlayerHP>().DecreaseHp();
+                    EventSystem.gameObject.GetComponent<HP3manager>().DecreaseHp();
                 }
             }
         }
     }
     //解説
-    //colliderをカメラに作った
+    //colliderはカメラ内にあるもの
     //collider内に敵がいるとき、rayを照射
     //rayに初めて当たったオブジェクトが目のとき、目が合っているということになる
 }

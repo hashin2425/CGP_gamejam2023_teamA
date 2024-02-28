@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerHP : MonoBehaviour
+public class HPmanager : MonoBehaviour
 {
     [Header("プレイヤーのHPの数")] public int HP = 3;
     [SerializeField] GameObject HPImage;

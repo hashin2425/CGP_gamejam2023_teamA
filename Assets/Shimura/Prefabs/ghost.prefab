@@ -12,9 +12,10 @@ GameObject:
   - component: {fileID: 8491340226853958160}
   - component: {fileID: 4362773800686935537}
   - component: {fileID: 7974808366646740930}
-  m_Layer: 0
+  - component: {fileID: 3778980200562579610}
+  m_Layer: 7
   m_Name: ghost
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -106,6 +107,19 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 2.0148687, y: 1.4188225, z: 2.2351747}
   m_Center: {x: 0, y: -1.2146512, z: -0.006410976}
+--- !u!114 &3778980200562579610
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4986434376247355207}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 314366d9fbb68d047b2d1cb2ae4bc4f3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isDiscovered: 0
 --- !u!1 &7268209724533418883
 GameObject:
   m_ObjectHideFlags: 0
@@ -116,7 +130,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5824911406548457247}
   - component: {fileID: 673012662998348137}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: EyeBox
   m_TagString: Eye
   m_Icon: {fileID: 0}
