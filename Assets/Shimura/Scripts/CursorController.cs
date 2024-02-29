@@ -21,6 +21,8 @@ public class CursorController : MonoBehaviour
             Cursor.visible = true;
             //カーソルを自由に動かせるように
             Cursor.lockState = CursorLockMode.None;
+            //Time.timeScaleを0に
+            Time.timeScale = 0;
         }
 
         if (Input.GetKeyDown(KeyCode.Return))
@@ -29,6 +31,8 @@ public class CursorController : MonoBehaviour
             Cursor.visible = false;
             //カーソルを画面中央にロック
             Cursor.lockState = CursorLockMode.Locked;
+            //Time.timeScaleを1に
+            Time.timeScale = 1;
         }
     }
 }
