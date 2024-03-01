@@ -5,11 +5,9 @@ using UnityEngine;
 public class HP3manager : MonoBehaviour
 {  
     [Header("プレイヤーのHPの数")] public int HP = Mathf.Clamp(3,0,3);
-    [Header("ダメージを受けたときに無敵にする時間")] [SerializeField] float mutekiTime;
     [SerializeField] GameObject HeartBlImage1;
     [SerializeField] GameObject HeartBlImage2;
     [SerializeField] GameObject HeartBlImage3;
-    bool ismuteki = false;
     void Start()
     {
         DisplayHPImage();
@@ -22,12 +20,8 @@ public class HP3manager : MonoBehaviour
     //HPが減った時の処理の関数
     public void DecreaseHp()
     {
-        if (!ismuteki)
-        {
-            HP--;
-            DisplayHPImage();
-            StartCoroutine(Mutekijikan());
-        }
+        HP--;
+        DisplayHPImage();
     }
     //HPが増えた時の処理の関数
     public void IncreaseHp()
@@ -62,14 +56,5 @@ public class HP3manager : MonoBehaviour
             HeartBlImage2.SetActive(true);
             HeartBlImage3.SetActive(true);
         }
-    }
-    //無敵時間のコルーチン
-    IEnumerator Mutekijikan()
-    {
-        ismuteki = true;
-
-        yield return new WaitForSeconds(mutekiTime);
-
-        ismuteki = false;
     }
 }

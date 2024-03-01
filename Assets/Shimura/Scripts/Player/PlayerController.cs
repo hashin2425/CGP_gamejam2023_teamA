@@ -10,10 +10,10 @@ public class PlayerController : MonoBehaviour
     [Header("y方向の視点感度")] public float y_sensi;
     [Header("カメラ")] [SerializeField] GameObject Maincamera;
     [SerializeField] Animator anim;
-    float runspeed;
+    float runspeed; // これはrunSPEEDと違う
     Rigidbody rb;
     bool isJumping = false;
-    [SerializeField] float jumpPower;
+    public float jumpPower;
     void Start()
     {
         runspeed = 1.0f;
@@ -90,12 +90,13 @@ public class PlayerController : MonoBehaviour
     //shiftで走る関数
     void shiftdash()
     {
+        //Shiftを押したとき
         if (Input.GetKey(KeyCode.RightShift) || Input.GetKey(KeyCode.LeftShift))
         {
             runspeed = runSPEED;
             anim.SetBool("bl_Run", true);
         }
-
+        //Shiftを離したとき
         if (Input.GetKeyUp(KeyCode.RightShift) || Input.GetKeyUp(KeyCode.LeftShift))
         {
             runspeed = 1.0f;
