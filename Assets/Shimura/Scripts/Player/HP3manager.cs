@@ -32,29 +32,24 @@ public class HP3manager : MonoBehaviour
     //hpの表示に関するメソッド
     void DisplayHPImage()
     {
-        if (HP==3)
+        switch (HP)
         {
-            HeartBlImage1.SetActive(false);
-            HeartBlImage2.SetActive(false);
-            HeartBlImage3.SetActive(false);
-        }
-        else if (HP==2)
-        {
-            HeartBlImage1.SetActive(false);
-            HeartBlImage2.SetActive(false);
-            HeartBlImage3.SetActive(true);
-        }
-        else if (HP==1)
-        {
-            HeartBlImage1.SetActive(false);
-            HeartBlImage2.SetActive(true);
-            HeartBlImage3.SetActive(true);
-        }
-        else
-        {
-            HeartBlImage1.SetActive(true);
-            HeartBlImage2.SetActive(true);
-            HeartBlImage3.SetActive(true);
+            case 3:
+                HeartBlImage1.SetActive(false);
+                HeartBlImage2.SetActive(false);
+                HeartBlImage3.SetActive(false);break;
+            case 2:
+                HeartBlImage1.SetActive(false);
+                HeartBlImage2.SetActive(false);
+                HeartBlImage3.SetActive(true);break;
+            case 1:
+                HeartBlImage1.SetActive(false);
+                HeartBlImage2.SetActive(true);
+                HeartBlImage3.SetActive(true);break;
+            default:
+                HeartBlImage1.SetActive(true);
+                HeartBlImage2.SetActive(true);
+                HeartBlImage3.SetActive(true);break;
         }
     }
 }
