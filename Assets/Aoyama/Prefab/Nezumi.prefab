@@ -105,6 +105,9 @@ MonoBehaviour:
   moveTime: 2
   stopTime: 1
   runTime: 5
+  speed: 0.02
+  moveTime: 2
+  stopTime: 1
 --- !u!54 &-991682389842229990
 Rigidbody:
   m_ObjectHideFlags: 0
