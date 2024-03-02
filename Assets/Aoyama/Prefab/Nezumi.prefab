@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 358577585008767833}
   m_Layer: 0
   m_Name: Nezumi
-  m_TagString: Item
+  m_TagString: item
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -101,7 +101,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5731ccf3447728249b8fd257d3c97499, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 0}
+  player: {fileID: 2278115454019496515, guid: 1d3ad98c788cd5b43857e8ad8ed5682c, type: 3}
   speed: 0.03
   moveTime: 2
   stopTime: 1

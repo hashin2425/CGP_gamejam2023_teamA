@@ -11,9 +11,10 @@ GameObject:
   - component: {fileID: 5469396239390988374}
   - component: {fileID: 7863772737438849588}
   - component: {fileID: 8355277912079769022}
+  - component: {fileID: 485377604167205893}
   m_Layer: 0
   m_Name: Geta
-  m_TagString: Item
+  m_TagString: item
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -83,3 +84,24 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &485377604167205893
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4863839554688852148}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.49284083, y: 0.24208453, z: 0.5000011}
+  m_Center: {x: 0.06178724, y: 0.045283046, z: 0.018696792}
