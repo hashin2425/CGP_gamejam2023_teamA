@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 4054436670026328265}
   m_Layer: 0
   m_Name: Katsuobushi
-  m_TagString: Item
+  m_TagString: item
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

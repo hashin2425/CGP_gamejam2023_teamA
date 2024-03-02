@@ -8,7 +8,8 @@ TagManager:
   - Enemy
   - Eye
   - Wall
-  - Item
+  - item
+  - GetItemArea
   layers:
   - Default
   - TransparentFX

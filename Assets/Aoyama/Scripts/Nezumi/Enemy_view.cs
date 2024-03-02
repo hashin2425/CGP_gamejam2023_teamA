@@ -60,7 +60,9 @@ public class Enemy_view : MonoBehaviour
             //Rayが最初に当たった物体を調べる
             if (Physics.Raycast(ray.origin, ray.direction * distance_red, out hit))
             {
-                if (hit.collider.CompareTag("Player"))
+                //Debug.Log(hit.collider.tag);
+
+                if (hit.collider.CompareTag("Player") || hit.collider.CompareTag("GetItemArea")) //GetItemAreaが最初にRayに当たるはず
                 {
                     if (discovered == false)
                     {

@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class NezumiController : MonoBehaviour
 {
-    [Header("プレイヤーのゲームオブジェクト")]public GameObject player;
+    [Header("プレイヤーのゲームオブジェクト")] [SerializeField] GameObject player;
     [Header("移動速度(0.02~0.1 プレイヤーより遅めに)")]public float speed = 0.04f;   
     [Header("「移動 → 止まる」ループの移動する時間")]public float moveTime = 2.0f; //～秒動いて、
     [Header("「移動 → 止まる」ループの止まる時間")]public float stopTime = 1.0f; //～秒止まる
