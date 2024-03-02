@@ -4,8 +4,12 @@
 TagManager:
   serializedVersion: 2
   tags:
-  - Wall
+  - Floor
   - Enemy
+  - Eye
+  - Wall
+  - item
+  - GetItemArea
   layers:
   - Default
   - TransparentFX
@@ -13,8 +17,8 @@ TagManager:
   - 
   - Water
   - UI
-  - 
-  - 
+  - Player
+  - Enemy
   - 
   - 
   - 
