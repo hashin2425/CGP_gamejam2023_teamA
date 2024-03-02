@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 4237283266285976818}
   m_Layer: 0
   m_Name: Kyuuri
-  m_TagString: Untagged
+  m_TagString: Item
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
