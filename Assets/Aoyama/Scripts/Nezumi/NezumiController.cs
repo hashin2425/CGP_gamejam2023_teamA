@@ -50,7 +50,7 @@ public class NezumiController : MonoBehaviour
                 Vector3 course = new Vector3(0, Random.Range(-90, 90), 0);
                 transform.localRotation *= Quaternion.Euler(course);
     
-                //カウントを0に戻す
+                //カウントを戻す
                 rotationTimeCount = -0.5f;
             }
         }
@@ -76,6 +76,7 @@ public class NezumiController : MonoBehaviour
 
                 normal = true; //通常時の行動に戻る
                 moveTimeCount = 0; //カウントを0に戻す
+                rotationTimeCount = 0; //カウントを0に戻す
             }
         }
 
@@ -96,6 +97,16 @@ public class NezumiController : MonoBehaviour
         //カウントを0に戻す
         rotationTimeCount = 0;
         moveTimeCount = 0;
+    }
 
+    //障害物で前に進めないので方向転換
+    public void ChangeDirection()
+    {
+        Vector3 course = new Vector3(0, Random.Range(90, 270), 0);
+        transform.localRotation *= Quaternion.Euler(course);
+
+        //カウントを0に戻す
+        rotationTimeCount = 0;
+        moveTimeCount = 0;
     }
 }

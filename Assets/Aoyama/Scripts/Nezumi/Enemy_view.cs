@@ -12,7 +12,6 @@ public class Enemy_view : MonoBehaviour
     Vector3 direction; //Rayを飛ばす方向
 
     private float distance_red = 10; //Ray(赤色)を飛ばす距離
-    private float distance_blue = 10; //Ray(青色)を飛ばす距離
     private float warningCount;
 
     bool discovered = false;
@@ -41,6 +40,7 @@ public class Enemy_view : MonoBehaviour
 
     private void OnTriggerStay(Collider other)
     {
+        //プレイヤーの認識
         if (other.CompareTag("Player"))
         {
             //Rayを飛ばす方向を計算
@@ -73,21 +73,6 @@ public class Enemy_view : MonoBehaviour
                 {
                     //Debug.Log("プレイヤーとの間に壁がある");
                 }
-            }
-        }
-        else
-        {
-            //Rayを飛ばす方向を計算
-            Vector3 temp = other.transform.position - transform.position;
-            direction = temp.normalized;
-            //敵の前方からのプレイヤーの方向を計算
-            var angle = Vector3.Angle(transform.forward, temp);
-            //Debug.Log(angle);
-
-            if (angle <= 10)
-            {
-                ray = new Ray(transform.position, Vector3.forward);  //Rayを飛ばす
-                Debug.DrawRay(ray.origin, ray.direction * distance_blue, Color.blue);  // Rayをシーン上に描画
             }
         }
     }
