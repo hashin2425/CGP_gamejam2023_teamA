@@ -6,7 +6,7 @@ public class EnemyActions : MonoBehaviour
 {
     public float movementSpeed = 5.0f;
     public float changeDirectionInterval = 2.0f;
-    public BoxCollider enemyCollider;
+    [SerializeField] BoxCollider enemyCollider; // 他スクリプトからの書き換えを望まないため、SerializeField
     public float rotationDuration = 1.0f;
 
     private float timer;
