@@ -48,7 +48,6 @@ public class Enemy_view : MonoBehaviour
             direction = temp.normalized;
             //敵の前方からのプレイヤーの方向を計算
             var angle = Vector3.Angle(transform.forward, temp);
-            //Debug.Log(angle);
 
             //視野角内にプレイヤーがいるとき
             if (angle <= searchAngle)
@@ -67,7 +66,7 @@ public class Enemy_view : MonoBehaviour
                     if (discovered == false)
                     {
                         discovered = true;
-                        Debug.Log("プレイヤー発見");
+                        //Debug.Log("プレイヤー発見");
                         nezumiController.RunAway(); //ねずみが逃げる関数を呼び出す
                     }
                 }
