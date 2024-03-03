@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 8356027679531112077}
   m_Layer: 0
   m_Name: Suzu
-  m_TagString: Untagged
+  m_TagString: item
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -27,7 +27,7 @@ Transform:
   m_GameObject: {fileID: 4549667311787958089}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 381.99042, y: 0.269, z: 69.3233}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []

@@ -11,9 +11,11 @@ GameObject:
   - component: {fileID: 8403354285517862213}
   - component: {fileID: 4640772149339751771}
   - component: {fileID: 1567840753623891835}
+  - component: {fileID: -6421418237061375516}
+  - component: {fileID: 1518474763534226013}
   m_Layer: 0
   m_Name: Sakana
-  m_TagString: Untagged
+  m_TagString: item
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -27,7 +29,7 @@ Transform:
   m_GameObject: {fileID: 7710639215178213230}
   serializedVersion: 2
   m_LocalRotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071067}
-  m_LocalPosition: {x: 382.91772, y: 0.37, z: 66.7}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 17.7854, y: 17.7854, z: 17.7854}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -86,3 +88,39 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &-6421418237061375516
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7710639215178213230}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ebdbfc2d4fb531047847f67fd88f4523, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  HP3manager: {fileID: 0}
+--- !u!136 &1518474763534226013
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7710639215178213230}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.014056476
+  m_Height: 0.145243
+  m_Direction: 1
+  m_Center: {x: -2.3283067e-10, y: 0.017170103, z: -0.00010606785}

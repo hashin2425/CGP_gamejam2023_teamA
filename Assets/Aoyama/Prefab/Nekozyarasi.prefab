@@ -11,9 +11,11 @@ GameObject:
   - component: {fileID: 2752753820625251681}
   - component: {fileID: 3369942885309072983}
   - component: {fileID: 3117521141418296409}
+  - component: {fileID: 742738250480784485}
+  - component: {fileID: 7158295664554622451}
   m_Layer: 0
   m_Name: Nekozyarasi
-  m_TagString: Untagged
+  m_TagString: item
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -27,9 +29,9 @@ Transform:
   m_GameObject: {fileID: 6616550782761649095}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 381.2404, y: 0.000008821487, z: 66.402504}
-  m_LocalScale: {x: 0.045026004, y: 0.045026004, z: 0.045026004}
-  m_ConstrainProportionsScale: 0
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 0.059999995, y: 0.059999995, z: 0.059999995}
+  m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -85,3 +87,37 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &742738250480784485
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6616550782761649095}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5d5915b8101ecf848bc92bd4668cbc9d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  buff_debuff: {fileID: 0}
+--- !u!65 &7158295664554622451
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6616550782761649095}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 2.2278404, y: 11.104685, z: 1.557378}
+  m_Center: {x: -0.39735338, y: 4.5523424, z: 0.0014826058}

@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class NezumiController : MonoBehaviour
 {
-    [Header("プレイヤーのゲームオブジェクト")]public GameObject player;
-    [Header("移動速度(0.02~0.1 プレイヤーより遅めに)")]public float speed = 0.04f;   
+    [Header("プレイヤーのゲームオブジェクト")] [SerializeField] GameObject player;
+    [Header("移動速度(1秒で進む距離 プレイヤーより遅めに)")]public float speed = 3f;   
     [Header("「移動 → 止まる」ループの移動する時間")]public float moveTime = 2.0f; //～秒動いて、
     [Header("「移動 → 止まる」ループの止まる時間")]public float stopTime = 1.0f; //～秒止まる
     [Header("逃げる（走る）時間")]public float runTime = 5.0f; //～秒走る
@@ -35,7 +35,7 @@ public class NezumiController : MonoBehaviour
             //2秒間前進
             if (moveTimeCount > 0 && moveTimeCount < moveTime)
             {
-                transform.position += -transform.right * speed;
+                transform.position += -transform.right * speed * Time.deltaTime;
             }
             //移動時間をリセットして1秒止まる
             else if (moveTimeCount > moveTime)
@@ -50,7 +50,7 @@ public class NezumiController : MonoBehaviour
                 Vector3 course = new Vector3(0, Random.Range(-90, 90), 0);
                 transform.localRotation *= Quaternion.Euler(course);
     
-                //カウントを0に戻す
+                //カウントを戻す
                 rotationTimeCount = -0.5f;
             }
         }
@@ -58,7 +58,7 @@ public class NezumiController : MonoBehaviour
         //逃げるときの行動
         if (normal == false)
         {
-            transform.position += -transform.right * speed * 2; //通常時の2倍の速さで逃げる
+            transform.position += -transform.right * 2 * speed * Time.deltaTime; //通常時の2倍の速さで逃げる
 
             if(rotationTimeCount > 1)
             {
@@ -76,6 +76,7 @@ public class NezumiController : MonoBehaviour
 
                 normal = true; //通常時の行動に戻る
                 moveTimeCount = 0; //カウントを0に戻す
+                rotationTimeCount = 0; //カウントを0に戻す
             }
         }
 
@@ -96,6 +97,16 @@ public class NezumiController : MonoBehaviour
         //カウントを0に戻す
         rotationTimeCount = 0;
         moveTimeCount = 0;
+    }
 
+    //障害物で前に進めないので方向転換
+    public void ChangeDirection()
+    {
+        Vector3 course = new Vector3(0, Random.Range(90, 270), 0);
+        transform.localRotation *= Quaternion.Euler(course);
+
+        //カウントを0に戻す
+        rotationTimeCount = 0;
+        moveTimeCount = 0;
     }
 }
