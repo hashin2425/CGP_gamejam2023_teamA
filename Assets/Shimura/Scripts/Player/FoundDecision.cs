@@ -81,6 +81,8 @@ public class FoundDecision : MonoBehaviour
 
         ismuteki = false;
     }
+
+    //ダメージくらった時のエフェクトアニメーション
     void DamageEffect()
     {
         Invoke("DamagePaneltrue",0f);
