@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Nekozyarashi : MonoBehaviour
+public class Matatabi : MonoBehaviour
 {
     [Header("Buff_debuff_manager script")]public Buff_debuff_manager buff_debuff;
 
@@ -18,11 +18,11 @@ public class Nekozyarashi : MonoBehaviour
         
     }
 
-    //Playerが獲得すると少しの間止まる
+    //プレイイヤーが獲得すると少しの間速度が上がる
     private void OnDestroy()
     {
-        //Debug.Log("猫じゃらしに夢中！")
+        //Debug.Log("興奮状態！")
 
-        buff_debuff.PlayerStop(); //Playerを一定時間停止させるデバフの関数を呼び出す
+        buff_debuff.SpeedUp(); //Playerの速度を一定時間上げるバフの関数を呼び出す
     }
 }

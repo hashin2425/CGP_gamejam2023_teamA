@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Nekozyarashi : MonoBehaviour
+public class Makimono : MonoBehaviour
 {
     [Header("Buff_debuff_manager script")]public Buff_debuff_manager buff_debuff;
 
@@ -18,11 +18,11 @@ public class Nekozyarashi : MonoBehaviour
         
     }
 
-    //Playerが獲得すると少しの間止まる
+    //プレイイヤーが獲得するとアイテムの位置が一定時間分かる
     private void OnDestroy()
     {
-        //Debug.Log("猫じゃらしに夢中！")
+        Debug.Log("千里眼");
 
-        buff_debuff.PlayerStop(); //Playerを一定時間停止させるデバフの関数を呼び出す
+        buff_debuff.Clairvoyance(); //アイテムの位置が分かる関数を呼び出す
     }
 }
