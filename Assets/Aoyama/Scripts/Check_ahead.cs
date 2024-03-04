@@ -21,11 +21,11 @@ public class Check_ahead : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        Debug.Log("障害物あり");
+        //Debug.Log("障害物あり");
 
         //親のオブジェクト名を取得
         string parentObjectName = transform.parent.name;
-        Debug.Log(parentObjectName);
+        //Debug.Log(parentObjectName);
         
         //ねずみ用
         if (parentObjectName == "Nezumi")

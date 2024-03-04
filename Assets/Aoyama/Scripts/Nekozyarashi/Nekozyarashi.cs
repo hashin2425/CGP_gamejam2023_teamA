@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Nekozyarashi : MonoBehaviour
 {
-    [Header("BuffDebuffManagerのBuff__debuff_manager script")]public Buff_debuff_manager buff_debuff;
+    [Header("Buff_debuff_manager script")]public Buff_debuff_manager buff_debuff;
 
     // Start is called before the first frame update
     void Start()

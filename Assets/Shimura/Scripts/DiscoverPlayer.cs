@@ -22,14 +22,14 @@ public class DiscoverPlayer : MonoBehaviour
             Debug.DrawRay(ray.origin, ray.direction * 15, Color.blue, 0.5f);
             if(hit.collider.CompareTag("Player"))
             {
-                //ここに見つかった時の処理
+                //ここに見つかった時の処理書いといて
                 isDiscovered= true;
             }
             
         }
         else
         {
-            //ここに見つかってない時の処理(見つかっているときと逆の処理)
+            //ここに見つかってない時の処理(見つかっているときと逆の処理かな)書いといて
             isDiscovered=false;
         }
 
