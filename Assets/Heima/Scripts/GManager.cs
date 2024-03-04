@@ -2,7 +2,6 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
-using System.Threading.Tasks;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using static GameData.ConstSettings;
@@ -24,6 +23,15 @@ public class GManager : MonoBehaviour
             Destroy(gameObject);
         }
     }
+    private float countdownSec;
+    private int score;
+    public int Score => score;
+    private UIManager uiManager;
+    private Coroutine countdownCoroutine;
+    private List<Items> itemList;
+    public List<Items> ItemList => itemList;
+    private GameState currentGameState;
+    public GameState CurrentGameState => currentGameState;
     void Start()
     {
         //シーンロードをイベントリスナーに追加
@@ -39,15 +47,6 @@ public class GManager : MonoBehaviour
             currentGameState = GameState.GameClear;
         }
     }
-    private float countdownSec;
-    private int score;
-    public int Score => score;
-    private UIManager uiManager;
-    private Coroutine countdownCoroutine;
-    private List<Items> itemList;
-    public List<Items> ItemList => itemList;
-    private GameState currentGameState;
-    public GameState CurrentGameState => currentGameState;
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.Escape))
@@ -57,6 +56,18 @@ public class GManager : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.C)) //仮
         {
             ChangeGameState(GameState.GameClear);
+        }
+        if (Input.GetKeyDown(KeyCode.Alpha1))
+        {
+            CollectItem(Items.Mouse);
+        }
+        if (Input.GetKeyDown(KeyCode.Alpha2))
+        {
+            CollectItem(Items.Fish);
+        }
+        if (Input.GetKeyDown(KeyCode.Alpha3))
+        {
+            CollectItem(Items.Roomba);
         }
     }
     //ゲーム状態の変更
@@ -95,30 +106,32 @@ public class GManager : MonoBehaviour
     //アイテム拾った時の処理
     public void CollectItem(Items item)
     {
+        Debug.Log("Get item: " + item);
         itemList.Add(item);
-        switch (item)
+        score += itemScores[item];
+    }
+    //クリア可能かチェック
+    public bool canEscape()
+    {
+        if (itemList.Count() >= requiredItemNum[0])
         {
-            case Items.Mouse:
-                score += 200; break;
-            default :
-                score += DEFAULT_ITEM_SCORE; break;
+            return true;
+        }
+        else
+        {
+            return false;
         }
     }
-    //セーブ, 使うかわからん, 並列処理
+    //セーブ, 使うかわからん
     void Save()
     {
-        Task.Run(() =>
+        //アイテムごとに累計取得数をセーブ
+        foreach (var item in itemList)
         {
-            //リストを集計して辞書型にする
-            var itemDict = itemList.GroupBy(x => x).ToDictionary(g => g.Key, g => g.Count());
-            //アイテムごとにその数をセーブ
-            foreach (var item in itemDict)
-            {
-                int numOfItem = PlayerPrefs.GetInt(item.Key.ToString(), 0);
-                numOfItem += item.Value;
-                PlayerPrefs.SetInt(item.Key.ToString(), numOfItem);
-            }
-        });
+            int numOfItem = PlayerPrefs.GetInt(item.ToString(), 0);
+            numOfItem++;
+            PlayerPrefs.SetInt(item.ToString(), numOfItem);
+        }
     }
     //シーン読み込みのイベントハンドラ
     void SceneLoaded(Scene scene, LoadSceneMode mode)

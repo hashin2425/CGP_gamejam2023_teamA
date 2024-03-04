@@ -3,21 +3,31 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 using static GameData.ConstSettings;
 
 public class UIManager : MonoBehaviour
 {
     private static UIManager instance;
-    public static UIManager Instance => instance; //他のスクリプトからのアクセス用
+    public static UIManager Instance => instance;
     [SerializeField] TextMeshProUGUI countdownText;
     [SerializeField] TextMeshProUGUI scoreText;
     [SerializeField] GameObject pauseUI;
     [SerializeField] GameObject gameOverUI;
     [SerializeField] GameObject gameClearUI;
+    [SerializeField] GameObject itemUI;
+    [SerializeField] GameObject content;
+    //以下アイテムアイコンのprefab
+    [SerializeField] GameObject iconMouse;
+    [SerializeField] GameObject iconFish;
+    [SerializeField] GameObject iconRoomba;
     private GManager gManager;
     void Awake()
     {
-        instance = this;
+        if (instance == null)
+        {
+            instance = this;
+        }
     }
     void Start()
     {
@@ -32,7 +42,33 @@ public class UIManager : MonoBehaviour
         pauseUI.SetActive(false);
         gameClearUI.SetActive(false);
         gameOverUI.SetActive(false);
+        itemUI.SetActive(false);
         SetCountdownText(TIME_LIMIT_SEC);
+    }
+    //アイテム表示の準備
+    void PrepItemScrollView(List<Items> itemList)
+    {
+        GameObject itemPrefab = null;
+        foreach (var item in itemList)
+        {
+            switch (item)
+            {
+                case Items.Mouse:
+                    itemPrefab = iconMouse; break;
+                case Items.Fish:
+                    itemPrefab = iconFish; break;
+                case Items.Roomba:
+                    itemPrefab = iconRoomba; break;
+                default: break;
+            }
+            GameObject iconInstance = Instantiate(itemPrefab);
+            iconInstance.transform.SetParent(content.transform, false);
+        }
+    }
+    //アイテムUIの表示切り替え
+    public void ShowItemUI(bool tf)
+    {
+        itemUI.SetActive(tf);
     }
     //ポーズUIの表示切り替え
     public void ShowPauseUI(bool tf)
@@ -47,6 +83,7 @@ public class UIManager : MonoBehaviour
     //ゲームクリア時の処理
     public void ActionGameClear()
     {
+        PrepItemScrollView(gManager.ItemList);
         scoreText.SetText("Score: " + gManager.Score.ToString("N0"));
         gameClearUI.SetActive(true);
     }
