@@ -29,7 +29,7 @@ public class GetItem : MonoBehaviour
                 case "Nezumi":
                     item = Items.Mouse;break;
                 case "Sakana":
-                    item = Items.Swordfish;break;
+                    item = Items.Fish;break;
                 case "Runba":
                     item = Items.Roomba;break;
                 case "Matatabi":
