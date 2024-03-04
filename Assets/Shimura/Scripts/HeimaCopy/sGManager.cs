@@ -97,13 +97,7 @@ public class sGManager : MonoBehaviour
     public void CollectItem(Items item)
     {
         itemList.Add(item);
-        switch (item)
-        {
-            case Items.Mouse:
-                score += 200; break;
-            default :
-                score += DEFAULT_ITEM_SCORE; break;
-        }
+        score += itemScores[item];
     }
     //セーブ, 使うかわからん, 並列処理
     void Save()
