@@ -21,6 +21,18 @@ public class UIManager : MonoBehaviour
     [SerializeField] GameObject iconMouse;
     [SerializeField] GameObject iconFish;
     [SerializeField] GameObject iconRoomba;
+    [SerializeField] GameObject iconMatatabi;
+    [SerializeField] GameObject iconCannedFood;
+    [SerializeField] GameObject iconGoldfishBowl;
+    [SerializeField] GameObject iconDorayaki;
+    [SerializeField] GameObject iconCucumber;
+    [SerializeField] GameObject iconGeta;
+    [SerializeField] GameObject iconBristleGrass;
+    [SerializeField] GameObject iconKoban;
+    [SerializeField] GameObject iconPearl;
+    [SerializeField] GameObject iconScroll;
+    [SerializeField] GameObject iconBonitoFrakes;
+    [SerializeField] GameObject iconBell;
     private GManager gManager;
     void Awake()
     {

@@ -46,6 +46,7 @@ public class GManager : MonoBehaviour
         {
             currentGameState = GameState.GameClear;
         }
+        //PlayerPrefs.DeleteAll();
     }
     void Update()
     {
@@ -56,18 +57,6 @@ public class GManager : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.C)) //仮
         {
             ChangeGameState(GameState.GameClear);
-        }
-        if (Input.GetKeyDown(KeyCode.Alpha1))
-        {
-            CollectItem(Items.Mouse);
-        }
-        if (Input.GetKeyDown(KeyCode.Alpha2))
-        {
-            CollectItem(Items.Fish);
-        }
-        if (Input.GetKeyDown(KeyCode.Alpha3))
-        {
-            CollectItem(Items.Roomba);
         }
     }
     //ゲーム状態の変更
@@ -86,6 +75,7 @@ public class GManager : MonoBehaviour
                 uiManager.ActionGameOver(); break;
             case GameState.GameClear:
                 StopCountdownCoroutine();
+                Save();
                 score += (int)countdownSec * SCORE_PER_SEC;
                 uiManager.ActionGameClear(); break;
             default: break;
@@ -103,6 +93,12 @@ public class GManager : MonoBehaviour
         if (countdownCoroutine != null) StopCountdownCoroutine();
         countdownCoroutine = StartCoroutine(Countdown());
     }
+    //アイテムの数を返す
+    public int GetItemNum()
+    {
+        int tmp = itemList.Count();
+        return tmp;
+    }
     //アイテム拾った時の処理
     public void CollectItem(Items item)
     {
@@ -113,7 +109,7 @@ public class GManager : MonoBehaviour
     //クリア可能かチェック
     public bool canEscape()
     {
-        if (itemList.Count() >= requiredItemNum[0])
+        if (GetItemNum() >= requiredItemNum[DifficultyManager.DifficultyLevel-1])
         {
             return true;
         }

@@ -2257,55 +2257,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 401371941}
   m_CullTransparentMesh: 1
---- !u!1 &477190497
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 477190499}
-  - component: {fileID: 477190498}
-  m_Layer: 0
-  m_Name: UIManager
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &477190498
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 477190497}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9d4ec9d0b29f8b240bcd49286f5017fd, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  countdownText: {fileID: 296212388}
-  scoreText: {fileID: 2062556261}
-  pauseUI: {fileID: 44783163}
-  gameOverUI: {fileID: 364892617}
-  gameClearUI: {fileID: 2126982973}
---- !u!4 &477190499
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 477190497}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &479508688
 GameObject:
   m_ObjectHideFlags: 0
@@ -5473,6 +5424,72 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1363283723}
   m_CullTransparentMesh: 1
+--- !u!1 &1380821625
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1380821627}
+  - component: {fileID: 1380821626}
+  m_Layer: 0
+  m_Name: UIManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1380821626
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1380821625}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9d4ec9d0b29f8b240bcd49286f5017fd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  countdownText: {fileID: 296212388}
+  scoreText: {fileID: 2062556261}
+  pauseUI: {fileID: 44783163}
+  gameOverUI: {fileID: 364892617}
+  gameClearUI: {fileID: 2126982973}
+  itemUI: {fileID: 363821714}
+  content: {fileID: 1724762211}
+  iconMouse: {fileID: 6716162471244007968, guid: 9634ab355129b4540ae7d6565dfb9456, type: 3}
+  iconFish: {fileID: 675365100563204998, guid: 551d673e51f22d14ab8dfa4024907e8a, type: 3}
+  iconRoomba: {fileID: 8484382671716325275, guid: 470e5315e5d7e0e478ef328ac3dad8d5, type: 3}
+  iconMatatabi: {fileID: 8484382671716325275, guid: dac0952a8ee94ea47ab7f54fce9cdb15, type: 3}
+  iconCannedFood: {fileID: 8484382671716325275, guid: 9138d80640420994b863a52bcf58be30, type: 3}
+  iconGoldfishBowl: {fileID: 8484382671716325275, guid: a044a050c46cd68469d66377d022dcbd, type: 3}
+  iconDorayaki: {fileID: 8484382671716325275, guid: a7e00bf1af26585448761b128433189b, type: 3}
+  iconCucumber: {fileID: 8484382671716325275, guid: b157fe8182cea6640a32dc32111edaea, type: 3}
+  iconGeta: {fileID: 4863839554688852148, guid: 00109c04264190c4190065c108a78924, type: 3}
+  iconBristleGrass: {fileID: 8484382671716325275, guid: 5d9fc969dbdbafb428caa27dc7741dcc, type: 3}
+  iconKoban: {fileID: 8484382671716325275, guid: bdf1fe8ae71269b4a8de3d33c7012db4, type: 3}
+  iconPearl: {fileID: 8484382671716325275, guid: c1c560edc6b22994c8efddd9715b6011, type: 3}
+  iconScroll: {fileID: 8484382671716325275, guid: db5e47c3c1f73be4887e03d91d76836a, type: 3}
+  iconBonitoFrakes: {fileID: 8484382671716325275, guid: f0900abceb7d1ff48a5929f3d413ca84, type: 3}
+  iconBell: {fileID: 8484382671716325275, guid: f0ffde6e96d064b4c931aae3b3602a5e, type: 3}
+--- !u!4 &1380821627
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1380821625}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1383978992
 GameObject:
   m_ObjectHideFlags: 0
@@ -8129,5 +8146,5 @@ SceneRoots:
   - {fileID: 364892621}
   - {fileID: 2126982977}
   - {fileID: 363821718}
-  - {fileID: 477190499}
   - {fileID: 1423797362}
+  - {fileID: 1380821627}
