@@ -12,12 +12,12 @@ public class UIManager : MonoBehaviour
     public static UIManager Instance => instance;
     [SerializeField] TextMeshProUGUI countdownText;
     [SerializeField] TextMeshProUGUI scoreText;
-    [SerializeField] GameObject pauseUI;
+    [SerializeField] Canvas pauseUI;
     [SerializeField] Slider bgmSlider;
     [SerializeField] Slider seSlider;
-    [SerializeField] GameObject gameOverUI;
-    [SerializeField] GameObject gameClearUI;
-    [SerializeField] GameObject itemUI;
+    [SerializeField] Canvas gameOverUI;
+    [SerializeField] Canvas gameClearUI;
+    [SerializeField] Canvas itemUI;
     [SerializeField] GameObject content;
     //以下アイテムアイコンのprefab
     [SerializeField] GameObject iconMouse;
@@ -53,10 +53,10 @@ public class UIManager : MonoBehaviour
         //GManagerのインスタンスを取得
         gManager = GManager.Instance;
         //UIの初期化
-        pauseUI.SetActive(false);
-        gameClearUI.SetActive(false);
-        gameOverUI.SetActive(false);
-        itemUI.SetActive(false);
+        pauseUI.enabled = false;
+        gameClearUI.enabled = false;
+        gameOverUI.enabled = false;
+        itemUI.enabled = false;
         SetCountdownText(TIME_LIMIT_SEC);
     }
     //アイテム表示の準備
@@ -105,24 +105,24 @@ public class UIManager : MonoBehaviour
     //アイテムUIの表示切り替え
     public void ShowItemUI(bool tf)
     {
-        itemUI.SetActive(tf);
+        itemUI.enabled = tf;
     }
     //ポーズUIの表示切り替え
     public void ShowPauseUI(bool tf)
     {
-        pauseUI.SetActive(tf);
+        pauseUI.enabled = tf;
     }
     //ゲームオーバー時の処理
     public void ActionGameOver()
     {
-        gameOverUI.SetActive(true);
+        gameOverUI.enabled = true;
     }
     //ゲームクリア時の処理
     public void ActionGameClear()
     {
         PrepItemScrollView(gManager.ItemList);
         scoreText.SetText("Score: " + gManager.Score.ToString("N0"));
-        gameClearUI.SetActive(true);
+        gameClearUI.enabled = true;
     }
     //カウントダウン表示
     public void SetCountdownText(float sec)
