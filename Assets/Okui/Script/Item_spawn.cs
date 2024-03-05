@@ -5,13 +5,17 @@ using UnityEngine;
 public class Item_spawn : MonoBehaviour
 {
     [SerializeField] GameObject[] spawnPoint;
-    [SerializeField] GameObject Item;
+    [SerializeField] GameObject[] item;
+
 
     private float spawnTimer;
+    private int number;
+    private int count;
 
     void Start()
     {
         spawnTimer = 0;
+        count = 0;
     }
 
     void Update()
@@ -20,9 +24,11 @@ public class Item_spawn : MonoBehaviour
 
         if (spawnTimer <= 0)
         {
-            GameObject randomPoint = spawnPoint[Random.Range(0, spawnPoint.Length)];
-            Instantiate(Item, randomPoint.transform.position, Quaternion.identity);
+            GameObject randomItem = item[Random.Range(0, item.Length)];
+            Instantiate(randomItem, spawnPoint[count].transform.position, Quaternion.identity);
             spawnTimer = 5;
+            count ++;
+
         }
     }
 }
