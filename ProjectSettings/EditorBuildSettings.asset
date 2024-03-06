@@ -14,10 +14,13 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/Heima/Scenes/Test_Heima.unity
     guid: 67d5264a8997b564281647ce98e05b8b
-  - enabled: 1
+  - enabled: 0
     path: Assets/Shimura/Scenes/Test_Heima.unity
     guid: e0743ad5ec1d4194fb7f43e255d422ee
   - enabled: 1
     path: Assets/Shimura/Scenes/Test_Menu.unity
     guid: 8d8a27df8d85b62408d06a8ee9bd96c3
+  - enabled: 1
+    path: Assets/Okui/Scenes/Test_Heima.unity
+    guid: 9f712eef8d114a24e987bcc825232c4c
   m_configObjects: {}
