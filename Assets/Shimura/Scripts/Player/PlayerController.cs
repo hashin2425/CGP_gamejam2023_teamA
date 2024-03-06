@@ -10,7 +10,7 @@ public class PlayerController : MonoBehaviour
     [Header("y方向の視点感度")] public float y_sensi;
     [Header("カメラ")] [SerializeField] GameObject Maincamera;
     [SerializeField] Animator anim;
-    [SerializeField] AudioClip footsteps;
+    //[SerializeField] AudioClip footsteps;
     [SerializeField] AudioSource audioSource;
     float runspeed; // これはrunSPEEDと違う
     Rigidbody rb;
@@ -49,7 +49,7 @@ public class PlayerController : MonoBehaviour
             StartCoroutine(WASDanim1());
             if (!isSounding)
             {
-                audioSource.PlayOneShot(footsteps);
+                audioSource.Play();
                 isSounding=true;
             }
         }
