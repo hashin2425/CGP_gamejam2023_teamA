@@ -7,10 +7,10 @@ public class PanelChange : MonoBehaviour
 {
     public GameObject title;
     public GameObject mainmenu;
-    public GameObject stage;
+    //public GameObject stage;
     public GameObject stage1; 
-    public GameObject stage2;
-    public GameObject stage3;
+    //public GameObject stage2;
+    //public GameObject stage3;
     public GameObject option;
     public GameObject item;
 
@@ -18,10 +18,10 @@ public class PanelChange : MonoBehaviour
     {
         title.SetActive(true);
         mainmenu.SetActive(false);
-        stage.SetActive(false);
+        //stage.SetActive(false);
         stage1.SetActive(false);
-        stage2.SetActive(false);
-        stage3.SetActive(false);
+        //stage2.SetActive(false);
+        //stage3.SetActive(false);
         option.SetActive(false);
         item.SetActive(false);
     }
@@ -30,10 +30,10 @@ public class PanelChange : MonoBehaviour
     {
         title.SetActive(true);
         mainmenu.SetActive(false);
-        stage.SetActive(false);
+        //stage.SetActive(false);
         stage1.SetActive(false);
-        stage2.SetActive(false);
-        stage3.SetActive(false);
+        //stage2.SetActive(false);
+        //stage3.SetActive(false);
         option.SetActive(false);
         item.SetActive(false);
     }
@@ -42,10 +42,10 @@ public class PanelChange : MonoBehaviour
     {
         title.SetActive(false);
         mainmenu.SetActive(true);
-        stage.SetActive(false);
+        //stage.SetActive(false);
         stage1.SetActive(false);
-        stage2.SetActive(false);
-        stage3.SetActive(false);
+        //stage2.SetActive(false);
+        //stage3.SetActive(false);
         option.SetActive(false);
         item.SetActive(false);
     }
@@ -54,10 +54,10 @@ public class PanelChange : MonoBehaviour
     {
         title.SetActive(false);
         mainmenu.SetActive(false);
-        stage.SetActive(true);
+        //stage.SetActive(true);
         stage1.SetActive(false);
-        stage2.SetActive(false);
-        stage3.SetActive(false);
+        //stage2.SetActive(false);
+        //stage3.SetActive(false);
         option.SetActive(false);
         item.SetActive(false);
     }
@@ -65,10 +65,10 @@ public class PanelChange : MonoBehaviour
     {
         title.SetActive(false);
         mainmenu.SetActive(false);
-        stage.SetActive(false);
+        //stage.SetActive(false);
         stage1.SetActive(true);
-        stage2.SetActive(false);
-        stage3.SetActive(false);
+        //stage2.SetActive(false);
+        //stage3.SetActive(false);
         option.SetActive(false);
         item.SetActive(false);
     }
@@ -76,10 +76,10 @@ public class PanelChange : MonoBehaviour
     {
         title.SetActive(false);
         mainmenu.SetActive(false);
-        stage.SetActive(false);
+        //stage.SetActive(false);
         stage1.SetActive(false);
-        stage2.SetActive(true);
-        stage3.SetActive(false);
+        //stage2.SetActive(true);
+        //stage3.SetActive(false);
         option.SetActive(false);
         item.SetActive(false);
     }
@@ -87,10 +87,10 @@ public class PanelChange : MonoBehaviour
     {
         title.SetActive(false);
         mainmenu.SetActive(false);
-        stage.SetActive(false);
+        //stage.SetActive(false);
         stage1.SetActive(false);
-        stage2.SetActive(false);
-        stage3.SetActive(true);
+        //stage2.SetActive(false);
+        //stage3.SetActive(true);
         option.SetActive(false);
         item.SetActive(false);
     }
@@ -98,10 +98,10 @@ public class PanelChange : MonoBehaviour
     {
         title.SetActive(false);
         mainmenu.SetActive(false);
-        stage.SetActive(false);
+        //stage.SetActive(false);
         stage1.SetActive(false);
-        stage2.SetActive(false);
-        stage3.SetActive(false);
+        //stage2.SetActive(false);
+        //stage3.SetActive(false);
         option.SetActive(true);
         item.SetActive(false);
     }
@@ -109,10 +109,10 @@ public class PanelChange : MonoBehaviour
     {
         title.SetActive(false);
         mainmenu.SetActive(false);
-        stage.SetActive(false);
+        //stage.SetActive(false);
         stage1.SetActive(false);
-        stage2.SetActive(false);
-        stage3.SetActive(false);
+        //stage2.SetActive(false);
+        //stage3.SetActive(false);
         option.SetActive(false);
         item.SetActive(true);
     }
