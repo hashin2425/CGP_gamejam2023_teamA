@@ -8,7 +8,7 @@ public class FoundDecision : MonoBehaviour
     GameObject DamagePanel;
     GameObject CatPlayer;
     [SerializeField] AudioClip Catvoice;
-    AudioSource audioSource;
+    [SerializeField] AudioSource audioSource;
     public bool isFound = false;
     [Header("ダメージを受けたときに無敵にする時間")] [SerializeField] float mutekiTime;
     bool ismuteki = false;
@@ -16,8 +16,6 @@ public class FoundDecision : MonoBehaviour
     {
         EventSystem = GameObject.Find ("EventSystem"); //HP3managerがついてるオブジェクトの名前に変えといて
         DamagePanel = GameObject.Find ("DamagePanel");
-        CatPlayer = GameObject.Find ("CatPlayer");
-        audioSource = CatPlayer.GetComponent<AudioSource>();
         DamagePanelfalse();
     }
 
