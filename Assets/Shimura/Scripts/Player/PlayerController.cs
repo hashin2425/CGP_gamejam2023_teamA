@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
-    [Header("移動速度(一秒で進む距離)")] public float PlayerSpeed;
+    [Header("移動速度(200くらい)")] public float PlayerSpeed;
     [Header("走るときの倍率")] [SerializeField] float runSPEED;
     [Header("x方向の視点感度")] public float x_sensi;
     [Header("y方向の視点感度")] public float y_sensi;
@@ -22,10 +22,14 @@ public class PlayerController : MonoBehaviour
 
     void Update()
     {   
-        WASDmove();
         CAMERAmove();
         shiftdash();
         Spacejump();
+    }
+
+    void FixedUpdate()
+    {
+        WASDmove();
     }
 
     //WASD移動の関数
@@ -33,8 +37,9 @@ public class PlayerController : MonoBehaviour
     { 
         float _input_WS = Input.GetAxis("Vertical");
         float _input_AD = Input.GetAxis("Horizontal");
-        transform.position += transform.TransformDirection(Vector3.forward) * _input_WS * PlayerSpeed * runspeed * Time.deltaTime
-                            + transform.TransformDirection(Vector3.right) * _input_AD * PlayerSpeed * runspeed * Time.deltaTime;
+        Vector3 movement = gameObject.transform.forward * _input_WS * PlayerSpeed * runspeed * Time.deltaTime 
+                            + gameObject.transform.right * _input_AD * PlayerSpeed * runspeed * Time.deltaTime;
+        rb.velocity = new Vector3(movement.x, rb.velocity.y, movement.z);
         //アニメーション用
         if (_input_WS != 0 || _input_AD != 0)
         {  

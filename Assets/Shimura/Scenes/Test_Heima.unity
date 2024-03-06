@@ -233,11 +233,6 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 4986434376247355207, guid: 39965a4ee3d883c429f2055d5cd7d2c3, type: 3}
   m_PrefabInstance: {fileID: 1146346759}
   m_PrefabAsset: {fileID: 0}
---- !u!65 &222775005 stripped
-BoxCollider:
-  m_CorrespondingSourceObject: {fileID: 7974808366646740930, guid: 39965a4ee3d883c429f2055d5cd7d2c3, type: 3}
-  m_PrefabInstance: {fileID: 1146346759}
-  m_PrefabAsset: {fileID: 0}
 --- !u!114 &222775009
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -252,7 +247,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   movementSpeed: 5
   changeDirectionInterval: 2
-  enemyCollider: {fileID: 222775005}
   rotationDuration: 1
 --- !u!1001 &228120188
 PrefabInstance:
