@@ -60,6 +60,8 @@ public class Buff_debuff_manager : MonoBehaviour
         //バフ音を鳴らす
         audioSource.PlayOneShot(buffSE);
 
+        
+
         playerCon.PlayerSpeed *= speedUp;
 
         yield return new WaitForSeconds(upTime); //～秒間効果持続
