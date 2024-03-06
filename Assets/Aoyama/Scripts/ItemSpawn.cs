@@ -23,8 +23,9 @@ public class ItemSpawn : MonoBehaviour
 
             GameObject randomPoint = spawnPoint[Random.Range(0, spawnPoint.Length)];
             GameObject Item = item[Random.Range(0, item.Length)];
-            Instantiate(Item, randomPoint.transform.position, Quaternion.identity);
-            spawnTimer = 5;
+            GameObject instance = Instantiate(Item, randomPoint.transform.position, Quaternion.identity);
+            instance.name = Item.name;
+            spawnTimer = 5000;
         }
     }
 }

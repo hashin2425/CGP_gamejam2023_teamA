@@ -49,6 +49,8 @@ public class RunbaController : MonoBehaviour
     //障害物で前に進めないので方向転換
     public void ChangeDirection()
     {
+        Debug.Log("方向転換");
+        
         Vector3 course = new Vector3(0, Random.Range(90, 270), 0);
         transform.localRotation *= Quaternion.Euler(course);
 

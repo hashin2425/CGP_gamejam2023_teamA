@@ -99,7 +99,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5d5915b8101ecf848bc92bd4668cbc9d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  buff_debuff: {fileID: 0}
+  buff_debuff: {fileID: 1954729963419928922, guid: 5f6a835f9ccd2ef479fac29ff739f0a9, type: 3}
 --- !u!65 &7158295664554622451
 BoxCollider:
   m_ObjectHideFlags: 0

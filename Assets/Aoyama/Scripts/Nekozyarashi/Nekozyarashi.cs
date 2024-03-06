@@ -21,7 +21,7 @@ public class Nekozyarashi : MonoBehaviour
     //Playerが獲得すると少しの間止まる
     private void OnDestroy()
     {
-        //Debug.Log("猫じゃらしに夢中！")
+        Debug.Log("猫じゃらしに夢中！");
 
         buff_debuff.PlayerStop(); //Playerを一定時間停止させるデバフの関数を呼び出す
     }

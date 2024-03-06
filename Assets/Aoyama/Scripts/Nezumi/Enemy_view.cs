@@ -48,9 +48,10 @@ public class Enemy_view : MonoBehaviour
             direction = temp.normalized;
             //敵の前方からのプレイヤーの方向を計算
             var angle = Vector3.Angle(transform.forward, temp);
+            //Debug.Log(angle);
 
             //視野角内にプレイヤーがいるとき
-            if (angle <= searchAngle)
+            if (angle - 90 <= searchAngle)
             {
                 ray = new Ray(transform.position, direction);  //Rayを飛ばす
                 Debug.DrawRay(ray.origin, ray.direction * distance_red, Color.red);  // Rayをシーン上に描画
@@ -61,7 +62,7 @@ public class Enemy_view : MonoBehaviour
             {
                 //Debug.Log(hit.collider.tag);
 
-                if (hit.collider.CompareTag("Player") || hit.collider.CompareTag("GetItemArea")) //GetItemAreaが最初にRayに当たるはず
+                if (hit.collider.CompareTag("Player"))
                 {
                     if (discovered == false)
                     {
