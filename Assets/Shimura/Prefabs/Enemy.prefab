@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 5229323368767525008}
   - component: {fileID: 6740057970476895901}
   - component: {fileID: 2095026335562443912}
+  - component: {fileID: 5950055151718159265}
   m_Layer: 0
   m_Name: Enemy
   m_TagString: Untagged
@@ -27,7 +28,7 @@ Transform:
   m_GameObject: {fileID: 2238908628911233414}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0.5, z: 0.024}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -76,6 +77,27 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 84
   m_CollisionDetection: 0
+--- !u!65 &5950055151718159265
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2238908628911233414}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.5, y: 0.5, z: 0.25}
+  m_Center: {x: 0, y: 0.13, z: 0.29}
 --- !u!1001 &6502348055749896495
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -90,7 +112,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4039877629095370856, guid: 39965a4ee3d883c429f2055d5cd7d2c3, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 4039877629095370856, guid: 39965a4ee3d883c429f2055d5cd7d2c3, type: 3}
       propertyPath: m_LocalPosition.z
