@@ -22,6 +22,10 @@ public class HP3manager : MonoBehaviour
     {
         HP--;
         DisplayHPImage();
+        if (HP == 0)
+        {
+            GManager.Instance.ChangeGameState(GameData.ConstSettings.GameState.GameOver);
+        }
     }
     //HPが増えた時の処理の関数
     public void IncreaseHp()

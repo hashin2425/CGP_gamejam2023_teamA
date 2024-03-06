@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class Check_ahead : MonoBehaviour
 {
-    public NezumiController nezumiController;
-    public RunbaController runbaController;
+    [SerializeField] NezumiController nezumiController;
+    [SerializeField] RunbaController runbaController;
 
     // Start is called before the first frame update
     void Start()
@@ -19,9 +19,9 @@ public class Check_ahead : MonoBehaviour
         
     }
 
-    private void OnTriggerEnter(Collider other)
+    private void OnTriggerStay(Collider other)
     {
-        //Debug.Log("障害物あり");
+        Debug.Log("障害物あり");
 
         //親のオブジェクト名を取得
         string parentObjectName = transform.parent.name;
@@ -37,7 +37,7 @@ public class Check_ahead : MonoBehaviour
         //ルンバ用
         if (parentObjectName == "Runba")
         {
-            runbaController.ChangeDirection(); //方向転換する関数を呼び出す
+            runbaController.ChangeDirection();
         }
 
         

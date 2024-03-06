@@ -13,6 +13,8 @@ public class UIManager : MonoBehaviour
     [SerializeField] TextMeshProUGUI countdownText;
     [SerializeField] TextMeshProUGUI scoreText;
     [SerializeField] GameObject pauseUI;
+    [SerializeField] Slider bgmSlider;
+    [SerializeField] Slider seSlider;
     [SerializeField] GameObject gameOverUI;
     [SerializeField] GameObject gameClearUI;
     [SerializeField] GameObject itemUI;
@@ -21,6 +23,18 @@ public class UIManager : MonoBehaviour
     [SerializeField] GameObject iconMouse;
     [SerializeField] GameObject iconFish;
     [SerializeField] GameObject iconRoomba;
+    [SerializeField] GameObject iconMatatabi;
+    [SerializeField] GameObject iconCannedFood;
+    [SerializeField] GameObject iconGoldfishBowl;
+    [SerializeField] GameObject iconDorayaki;
+    [SerializeField] GameObject iconCucumber;
+    [SerializeField] GameObject iconGeta;
+    [SerializeField] GameObject iconBristleGrass;
+    [SerializeField] GameObject iconKoban;
+    [SerializeField] GameObject iconPearl;
+    [SerializeField] GameObject iconScroll;
+    [SerializeField] GameObject iconBonitoFrakes;
+    [SerializeField] GameObject iconBell;
     private GManager gManager;
     void Awake()
     {
@@ -59,7 +73,30 @@ public class UIManager : MonoBehaviour
                     itemPrefab = iconFish; break;
                 case Items.Roomba:
                     itemPrefab = iconRoomba; break;
-                default: break;
+                case Items.Matatabi:
+                    itemPrefab = iconMatatabi; break;
+                case Items.CannedFood:
+                    itemPrefab = iconCannedFood; break;
+                case Items.GoldfishBowl:
+                    itemPrefab = iconGoldfishBowl; break;
+                case Items.Dorayaki:
+                    itemPrefab = iconDorayaki; break;
+                case Items.Cucumber:
+                    itemPrefab = iconCucumber; break;
+                case Items.Geta:
+                    itemPrefab = iconGeta; break;
+                case Items.BristleGrass:
+                    itemPrefab = iconBristleGrass; break;
+                case Items.Koban:
+                    itemPrefab = iconKoban; break;
+                case Items.Pearl:
+                    itemPrefab = iconPearl; break;
+                case Items.Scroll:
+                    itemPrefab = iconScroll; break;
+                case Items.BonitoFlakes:
+                    itemPrefab = iconBonitoFrakes; break;
+                case Items.Bell:
+                    itemPrefab = iconBell; break;
             }
             GameObject iconInstance = Instantiate(itemPrefab);
             iconInstance.transform.SetParent(content.transform, false);

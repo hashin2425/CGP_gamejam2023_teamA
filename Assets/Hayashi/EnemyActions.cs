@@ -4,16 +4,17 @@ using UnityEngine;
 
 public class EnemyActions : MonoBehaviour
 {
-    public float movementSpeed = 5.0f;
-    public float changeDirectionInterval = 2.0f;
-    [SerializeField] BoxCollider enemyCollider; // 他スクリプトからの書き換えを望まないため、SerializeField
-    public float rotationDuration = 1.0f;
+    [Header("敵キャラの移動速度")] public float movementSpeed = 2.0f;
+    [Header("回転終了後に次の方向へ移動するまでの時間")] public float changeDirectionInterval = 10.0f;
+    [Header("敵キャラが回転にかける時間")] public float rotationDuration = 1.2f;
 
+    private BoxCollider enemyCollider;
     private float timer;
     private bool isRotating = false;
 
     private void Start()
     {
+        enemyCollider = GetComponent<BoxCollider>();
         ChangeDirection();
     }
 
