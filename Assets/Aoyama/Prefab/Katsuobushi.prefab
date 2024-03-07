@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4054436670026328265}
   - component: {fileID: 2409454631088336520}
+  - component: {fileID: 6281523793931884488}
   m_Layer: 0
   m_Name: Katsuobushi
   m_TagString: item
@@ -54,6 +55,19 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.5068574, y: 0.3006864, z: 0.15522051}
   m_Center: {x: 0.04368496, y: 0.13794945, z: -0.005784426}
+--- !u!114 &6281523793931884488
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3072045854676368474}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5dda31bdab2145b42b5582da62d35c3e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  buff_debuff: {fileID: 0}
 --- !u!1 &3706359081502706473
 GameObject:
   m_ObjectHideFlags: 0
