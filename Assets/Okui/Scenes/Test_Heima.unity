@@ -150,6 +150,11 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 8733429697405204941, guid: 8dc3c79cba53dff4691a4894fb475e43, type: 3}
+--- !u!82 &27528532 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 6903773593929567151, guid: 1d3ad98c788cd5b43857e8ad8ed5682c, type: 3}
+  m_PrefabInstance: {fileID: 725894972}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &31096275 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: -2688293934219323030, guid: 8dc3c79cba53dff4691a4894fb475e43, type: 3}
@@ -2183,6 +2188,10 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4516952665456949639, guid: d3dc51924e1db4f4f9cfecbe2074ad77, type: 3}
+      propertyPath: audioSource
+      value: 
+      objectReference: {fileID: 27528532}
     - target: {fileID: 5773645529566497001, guid: d3dc51924e1db4f4f9cfecbe2074ad77, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -4041,6 +4050,10 @@ PrefabInstance:
       value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 1954729963419928922, guid: 5f6a835f9ccd2ef479fac29ff739f0a9, type: 3}
+      propertyPath: getItemSE
+      value: 
+      objectReference: {fileID: 8300000, guid: ec8966881a023e54da22d0c804502a80, type: 3}
+    - target: {fileID: 1954729963419928922, guid: 5f6a835f9ccd2ef479fac29ff739f0a9, type: 3}
       propertyPath: playerCon
       value: 
       objectReference: {fileID: 285174829}
@@ -4202,6 +4215,22 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 100212798325544560, guid: c9011665e0cfda544a2a42659de6d158, type: 3}
+      propertyPath: m_margin.w
+      value: -1.6164875
+      objectReference: {fileID: 0}
+    - target: {fileID: 100212798325544560, guid: c9011665e0cfda544a2a42659de6d158, type: 3}
+      propertyPath: m_margin.x
+      value: -1.6989565
+      objectReference: {fileID: 0}
+    - target: {fileID: 100212798325544560, guid: c9011665e0cfda544a2a42659de6d158, type: 3}
+      propertyPath: m_margin.y
+      value: -1.7649407
+      objectReference: {fileID: 0}
+    - target: {fileID: 100212798325544560, guid: c9011665e0cfda544a2a42659de6d158, type: 3}
+      propertyPath: m_margin.z
+      value: -1.7154508
+      objectReference: {fileID: 0}
     - target: {fileID: 2327589895501706427, guid: c9011665e0cfda544a2a42659de6d158, type: 3}
       propertyPath: m_Camera
       value: 

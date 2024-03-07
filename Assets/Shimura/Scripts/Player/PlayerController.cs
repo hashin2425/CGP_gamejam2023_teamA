@@ -19,6 +19,10 @@ public class PlayerController : MonoBehaviour
     public float jumpPower;
     void Start()
     {
+        // ゲーム開始時にマウスカーソルをロック
+        Cursor.lockState = CursorLockMode.Locked;
+        // カーソルを非表示にする
+        Cursor.visible = false;
         runspeed = 1.0f;
         rb = GetComponent<Rigidbody>();
     }
