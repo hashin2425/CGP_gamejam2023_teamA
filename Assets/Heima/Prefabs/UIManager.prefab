@@ -2994,6 +2994,9 @@ MonoBehaviour:
   iconScroll: {fileID: 8484382671716325275, guid: db5e47c3c1f73be4887e03d91d76836a, type: 3}
   iconBonitoFrakes: {fileID: 8484382671716325275, guid: f0900abceb7d1ff48a5929f3d413ca84, type: 3}
   iconBell: {fileID: 8484382671716325275, guid: f0ffde6e96d064b4c931aae3b3602a5e, type: 3}
+  audioSource: {fileID: 0}
+  gameCreaSE: {fileID: 8300000, guid: 41557af3adb45bb4aa5db4e4410ef62e, type: 3}
+  gameOverSE: {fileID: 8300000, guid: 8791346124e6e85488afc909bfb13dfd, type: 3}
 --- !u!1 &6751142028356130213
 GameObject:
   m_ObjectHideFlags: 0
