@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using static GameData.ConstSettings;
 
 public class MoritaSceneChange : MonoBehaviour
 {
@@ -18,6 +19,6 @@ public class MoritaSceneChange : MonoBehaviour
     }
     public void change_button()
     {
-        SceneManager.LoadScene("GamePlayscene");
+        SceneManager.LoadScene(GAMESCENE_NAME);
     }
 }

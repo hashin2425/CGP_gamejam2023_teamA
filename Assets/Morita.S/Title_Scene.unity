@@ -815,7 +815,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 330894501}
   m_CullTransparentMesh: 1
-
 --- !u!1 &424048512
 GameObject:
   m_ObjectHideFlags: 0
@@ -2150,6 +2149,7 @@ GameObject:
   - component: {fileID: 848055600}
   - component: {fileID: 848055599}
   - component: {fileID: 848055602}
+  - component: {fileID: 848055603}
   m_Layer: 5
   m_Name: stage2
   m_TagString: Untagged
@@ -2284,6 +2284,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   difficultyLevel: 1
+--- !u!114 &848055603
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 848055597}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9514d9135269f1c40a26ecef6490d24b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &857202408
 GameObject:
   m_ObjectHideFlags: 0
@@ -2576,6 +2588,7 @@ GameObject:
   - component: {fileID: 915191511}
   - component: {fileID: 915191510}
   - component: {fileID: 915191513}
+  - component: {fileID: 915191514}
   m_Layer: 5
   m_Name: stage3
   m_TagString: Untagged
@@ -2710,6 +2723,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   difficultyLevel: 2
+--- !u!114 &915191514
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 915191508}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9514d9135269f1c40a26ecef6490d24b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &973438597
 GameObject:
   m_ObjectHideFlags: 0
@@ -3295,6 +3320,7 @@ GameObject:
   - component: {fileID: 1244616813}
   - component: {fileID: 1244616812}
   - component: {fileID: 1244616815}
+  - component: {fileID: 1244616816}
   m_Layer: 5
   m_Name: stage1
   m_TagString: Untagged
@@ -3378,6 +3404,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 1244616810}
+        m_TargetAssemblyTypeName: UnityEngine.AudioSource, UnityEngine
+        m_MethodName: 
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: 
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1244616813
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3429,6 +3467,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   difficultyLevel: 0
+--- !u!114 &1244616816
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1244616810}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9514d9135269f1c40a26ecef6490d24b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1247840531
 GameObject:
   m_ObjectHideFlags: 0
