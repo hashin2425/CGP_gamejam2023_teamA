@@ -21,7 +21,7 @@ public class DifficultyButton : MonoBehaviour
         switch (difficultyLevel)
         {
             case Difficulty.Easy:
-                DifficultyManager.DifficultyLevel = 1;
+                DifficultyManager.DifficultyLevel = 3;
                 Debug.Log("Difficultylv."+ DifficultyManager.DifficultyLevel);
                 break;
             case Difficulty.Normal:
@@ -29,7 +29,7 @@ public class DifficultyButton : MonoBehaviour
                 Debug.Log("Difficultylv." + DifficultyManager.DifficultyLevel);
                 break;
             case Difficulty.Hard:
-                DifficultyManager.DifficultyLevel = 3;
+                DifficultyManager.DifficultyLevel = 1;
                 Debug.Log("Difficultylv." + DifficultyManager.DifficultyLevel);
                 break;
         }

@@ -171,7 +171,7 @@ public class GManager : MonoBehaviour
                 yield return new WaitForSeconds(1.0f);
                 countdownSec -= 1.0f;
                 uiManager.SetCountdownText(countdownSec);
-                Debug.Log("Time Limit: " + countdownSec);
+                //Debug.Log("Time Limit: " + countdownSec);
             }
             else
             {

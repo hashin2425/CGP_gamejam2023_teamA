@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 1567840753623891835}
   - component: {fileID: -6421418237061375516}
   - component: {fileID: 1518474763534226013}
+  - component: {fileID: 2360171197386985017}
   m_Layer: 0
   m_Name: Sakana
   m_TagString: item
@@ -31,7 +32,7 @@ Transform:
   m_LocalRotation: {x: -0.5416753, y: -0.45451942, z: 0.45451942, w: 0.5416753}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 17.7854, y: 17.7854, z: 17.7854}
-  m_ConstrainProportionsScale: 0
+  m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: -170, y: 90, z: -90}
@@ -124,3 +125,16 @@ CapsuleCollider:
   m_Height: 0.145243
   m_Direction: 1
   m_Center: {x: -2.3283067e-10, y: 0.017170103, z: -0.00010606785}
+--- !u!114 &2360171197386985017
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7710639215178213230}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5dda31bdab2145b42b5582da62d35c3e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  buff_debuff: {fileID: 0}

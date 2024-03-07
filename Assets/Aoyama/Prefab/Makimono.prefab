@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 7632775543747928130}
   - component: {fileID: 7620683234299416527}
   - component: {fileID: -9150394619472998501}
+  - component: {fileID: 5119706696537979912}
   m_Layer: 0
   m_Name: Makimono
   m_TagString: item
@@ -29,8 +30,8 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0.31789884, y: -0, z: -0, w: 0.94812465}
   m_LocalPosition: {x: -0.258, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_LocalScale: {x: 2, y: 2, z: 2}
+  m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 37.072, y: 0, z: 0}
@@ -107,3 +108,16 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.4205264, y: 0.50000024, z: 0.14980361}
   m_Center: {x: -0.022256576, y: -0.00984855, z: 0.0021898672}
+--- !u!114 &5119706696537979912
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4158034283123238073}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5dda31bdab2145b42b5582da62d35c3e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  buff_debuff: {fileID: 0}
