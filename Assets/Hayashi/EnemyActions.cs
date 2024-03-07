@@ -28,9 +28,10 @@ public class EnemyActions : MonoBehaviour
         timer += Time.deltaTime;
         if (CanFindPlayer())
         {
-            Vector3 vector3 = playerTransform.position;
-            vector3.x = 0; vector3.z = 0;
-            transform.LookAt(playerTransform.position);
+            Vector3 newVector3 = playerTransform.position;
+            newVector3.x = 0;
+            newVector3.z = 0;
+            transform.LookAt(newVector3);
             MoveForward(chaseSpeed);
         }
         else
