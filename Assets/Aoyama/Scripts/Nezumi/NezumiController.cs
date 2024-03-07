@@ -86,12 +86,12 @@ public class NezumiController : MonoBehaviour
     public void RunAway()
     {
         
-        //Debug.Log("逃げろ！");
+        Debug.Log("逃げろ！");
 
         normal = false;
 
         //プレイヤーから逃げるために後ろを向く
-        Vector3 course = new Vector3(0, Random.Range(150, 210), 0);
+        Vector3 course = new Vector3(0, Random.Range(60, 120), 0);
         transform.localRotation *= Quaternion.Euler(course);
 
         //カウントを0に戻す
