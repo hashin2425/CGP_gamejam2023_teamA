@@ -87,7 +87,11 @@ public class FoundDecision : MonoBehaviour
         Invoke("DamagePanelfalse",0.1f);
         Invoke("DamagePaneltrue",0.2f);
         Invoke("DamagePanelfalse",0.3f);
-        audioSource.PlayOneShot(Catvoice);
+        if (EventSystem.gameObject.GetComponent<HP3manager>().HP != 0)
+        {
+            audioSource.PlayOneShot(Catvoice);
+        }
+        
     }
     void DamagePaneltrue()
     {

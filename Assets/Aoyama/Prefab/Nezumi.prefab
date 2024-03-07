@@ -106,8 +106,8 @@ MonoBehaviour:
   speed: 3
   moveTime: 2
   stopTime: 1
+  run: 2.3
   runTime: 5
-  colliderComponent: {fileID: 358577585008767833}
 --- !u!54 &-991682389842229990
 Rigidbody:
   m_ObjectHideFlags: 0

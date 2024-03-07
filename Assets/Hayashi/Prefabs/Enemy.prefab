@@ -131,7 +131,7 @@ Transform:
   m_GameObject: {fileID: 2040440930371138864}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0.48}
+  m_LocalPosition: {x: 0, y: 0.36, z: 0.38}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -156,10 +156,10 @@ CapsuleCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.2
-  m_Height: 0.2
+  m_Radius: 0.28239405
+  m_Height: 1.1373737
   m_Direction: 1
-  m_Center: {x: 0, y: 0.25, z: 0.35}
+  m_Center: {x: 0, y: 0.12705088, z: 0.43239403}
 --- !u!1 &3957869672722366558
 GameObject:
   m_ObjectHideFlags: 0
@@ -246,7 +246,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   movementSpeed: 5
-  chaseSpeed: 7.5
+  chaseSpeed: 6
   changeDirectionInterval: 2
   rotationDuration: 0.8
   sightCollider: {fileID: 5864240872488239250}
@@ -664,8 +664,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 5, y: 0.5, z: 6.4460173}
-  m_Center: {x: 0, y: -0.25, z: 2.7230086}
+  m_Size: {x: 8.021777, y: 0.370031, z: 9.472412}
+  m_Center: {x: 0.016246319, y: -0.44495338, z: 3.2314827}
 --- !u!1001 &3422136199981324666
 PrefabInstance:
   m_ObjectHideFlags: 0
