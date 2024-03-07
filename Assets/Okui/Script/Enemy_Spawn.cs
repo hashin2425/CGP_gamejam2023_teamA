@@ -21,7 +21,7 @@ public class Enemy_spawn : MonoBehaviour
             numbers.Add(i);
         }
 
-        for (int j = 1; j <= DifficultyLeve; j++)
+        for (int j = 1; j <= DifficultyLeve * 2; j++)
         {
             int random_number = Random.Range(0, numbers.Count);
             int ransu = numbers[random_number];
