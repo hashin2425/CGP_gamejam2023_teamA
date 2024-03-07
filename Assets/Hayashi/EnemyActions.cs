@@ -9,6 +9,7 @@ public class EnemyActions : MonoBehaviour
     [Header("敵キャラがプレイヤーを追いかけるときの移動速度")] public float chaseSpeed = 1.0f;
     [Header("回転終了後に次の方向へ移動するまでの時間")] public float changeDirectionInterval = 10.0f;
     [Header("敵キャラが回転にかける時間")] public float rotationDuration = 1.2f;
+    [Header("敵キャラがPlayerを追いかける時間")] private float chaseTime = 3.0f;
 
     [SerializeField] BoxCollider sightCollider;
     [SerializeField] Transform rayStartPoint;
@@ -67,7 +68,7 @@ public class EnemyActions : MonoBehaviour
     {
         isChase=true;
          Debug.Log("oikaketeru");
-        yield return new WaitForSeconds(3);
+        yield return new WaitForSeconds(chaseTime);
         isChase=false;
         Debug.Log("minogasita");
     }
