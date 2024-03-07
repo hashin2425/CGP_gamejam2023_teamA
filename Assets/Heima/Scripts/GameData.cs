@@ -8,6 +8,7 @@ namespace GameData
         public static readonly float TIME_LIMIT_SEC = 180.0f;
         public static readonly int SCORE_PER_SEC = 100;
         public static readonly string GAMESCENE_NAME = "Test_Heima";
+        public static readonly string MENUSCENE_NAME = "Title_Scene";
         public static IReadOnlyList<int> requiredItemNum = new List<int>() { 0, 3, 5 };
         public static IReadOnlyDictionary<Items, int> itemScores = new Dictionary<Items, int>() {
             { Items.Mouse, 0 },
