@@ -4,42 +4,55 @@ using UnityEngine;
 
 public class EnemyActions : MonoBehaviour
 {
-    public float movementSpeed = 5.0f;
-    public float changeDirectionInterval = 2.0f;
-    [SerializeField] BoxCollider enemyCollider; // 他スクリプトからの書き換えを望まないため、SerializeField
-    public float rotationDuration = 1.0f;
+    [Header("敵キャラの移動速度")] public float movementSpeed = 2.0f;
+    [Header("敵キャラがプレイヤーを追いかけるときの移動速度")] public float chaseSpeed = 1.0f;
+    [Header("回転終了後に次の方向へ移動するまでの時間")] public float changeDirectionInterval = 10.0f;
+    [Header("敵キャラが回転にかける時間")] public float rotationDuration = 1.2f;
 
+    [SerializeField] CapsuleCollider sightCollider;
+
+    private BoxCollider enemyCollider;
     private float timer;
     private bool isRotating = false;
+    private Transform playerTransform;
 
     private void Start()
     {
+        enemyCollider = GetComponent<BoxCollider>();
+        playerTransform = GameObject.FindWithTag("Player").transform;
         ChangeDirection();
     }
 
     private void FixedUpdate()
     {
         timer += Time.deltaTime;
-
-        if (timer > changeDirectionInterval && !isRotating)
+        if (CanFindPlayer())
         {
-            ChangeDirection();
-            timer = 0;
+            transform.LookAt(playerTransform.position);
+            MoveForward(chaseSpeed);
         }
+        else
+        {
+            if (timer > changeDirectionInterval && !isRotating)
+            {
+                ChangeDirection();
+                timer = 0;
+            }
 
-        if (!HasCollision() && !isRotating)
-        {
-            MoveForward();
-        }
-        else if (HasCollision() && !isRotating)
-        {
-            ChangeDirection();
+            if (!HasCollision() && !isRotating)
+            {
+                MoveForward(movementSpeed);
+            }
+            else if (HasCollision() && !isRotating)
+            {
+                ChangeDirection();
+            }
         }
     }
 
-    private void MoveForward()
+    private void MoveForward(float speed = 1.0f)
     {
-        transform.position += transform.forward * movementSpeed * Time.deltaTime;
+        GetComponent<Rigidbody>().velocity = transform.forward * speed;
     }
 
     private void ChangeDirection()
@@ -74,6 +87,27 @@ public class EnemyActions : MonoBehaviour
             if ((col.CompareTag("Wall") || col.CompareTag("Enemy")) && col != enemyCollider)
             {
                 return true;
+            }
+        }
+        return false;
+    }
+
+    private bool CanFindPlayer()
+    {
+        // 「Playerタグを持つコリジョンに衝突している」なおかつ「自身からRayを飛ばして直線上にPlayerタグを持つオブジェクトが存在する」ならTrueを出して、それ以外はFalseを出す
+        Collider[] colliders = Physics.OverlapBox(sightCollider.bounds.center, sightCollider.bounds.extents, transform.rotation);
+        foreach (Collider col in colliders)
+        {
+            if (col.CompareTag("Player"))
+            {
+                RaycastHit hit;
+                if (Physics.Raycast(transform.position, col.transform.position - transform.position, out hit))
+                {
+                    if (hit.collider.CompareTag("Player"))
+                    {
+                        return true;
+                    }
+                }
             }
         }
         return false;
