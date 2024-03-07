@@ -602,6 +602,10 @@ PrefabInstance:
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6588392739372465230, guid: d3dc51924e1db4f4f9cfecbe2074ad77, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6675005446230097082, guid: d3dc51924e1db4f4f9cfecbe2074ad77, type: 3}
       propertyPath: m_Name
       value: UIManager
@@ -620,7 +624,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7485137255065346990, guid: d3dc51924e1db4f4f9cfecbe2074ad77, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 950
+      value: 119857.11
       objectReference: {fileID: 0}
     - target: {fileID: 8357644232909274475, guid: d3dc51924e1db4f4f9cfecbe2074ad77, type: 3}
       propertyPath: m_AnchorMax.y
