@@ -48,6 +48,7 @@ MonoBehaviour:
   playerCon: {fileID: 5840160895977042524, guid: 1d3ad98c788cd5b43857e8ad8ed5682c, type: 3}
   buffSE: {fileID: 8300000, guid: de9c3bdb720f97b4baf086730f129957, type: 3}
   debuffSE: {fileID: 8300000, guid: 3e49ea8175760244fb36a0ee6c28976e, type: 3}
+  getItemSE: {fileID: 8300000, guid: ec8966881a023e54da22d0c804502a80, type: 3}
   stopTime: 2
   speedUp: 1.5
   upTime: 10
