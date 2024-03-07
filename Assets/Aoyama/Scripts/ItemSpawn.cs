@@ -25,7 +25,7 @@ public class ItemSpawn : MonoBehaviour
             GameObject Item = item[Random.Range(0, item.Length)];
             GameObject instance = Instantiate(Item, randomPoint.transform.position, Item.transform.rotation);
             instance.name = Item.name;
-            spawnTimer = 1;
+            spawnTimer = 1000;
         }
     }
 }
