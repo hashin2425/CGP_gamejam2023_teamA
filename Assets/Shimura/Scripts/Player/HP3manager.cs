@@ -35,6 +35,10 @@ public class HP3manager : MonoBehaviour
     public void IncreaseHp()
     {
         HP++;
+        if (HP>3)
+        {
+            HP=3;
+        }
         DisplayHPImage();
     }
     //hpの表示に関するメソッド

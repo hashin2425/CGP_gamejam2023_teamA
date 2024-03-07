@@ -24,12 +24,20 @@ public class PlayerController : MonoBehaviour
     }
 
     void Update()
-    {   
+    {
         CAMERAmove();
         shiftdash();
         Spacejump();
+        if (isSounding == true)
+        {
+            if (Time.timeScale == 0)
+            {
+                isSounding = false;
+                audioSource.Stop();
+                Debug.Log("ototomatta");
+            }
+        }
     }
-
     void FixedUpdate()
     {
         WASDmove();
@@ -59,6 +67,7 @@ public class PlayerController : MonoBehaviour
             isSounding=false;
             audioSource.Stop();
         }
+        
     }
 
     //WASDアニメーション用コルーチン(歩き始め)

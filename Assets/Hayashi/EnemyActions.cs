@@ -9,7 +9,7 @@ public class EnemyActions : MonoBehaviour
     [Header("回転終了後に次の方向へ移動するまでの時間")] public float changeDirectionInterval = 10.0f;
     [Header("敵キャラが回転にかける時間")] public float rotationDuration = 1.2f;
 
-    [SerializeField] CapsuleCollider sightCollider;
+    [SerializeField] BoxCollider sightCollider;
 
     private BoxCollider enemyCollider;
     private float timer;
@@ -28,6 +28,8 @@ public class EnemyActions : MonoBehaviour
         timer += Time.deltaTime;
         if (CanFindPlayer())
         {
+            Vector3 vector3 = playerTransform.position;
+            vector3.x = 0; vector3.z = 0;
             transform.LookAt(playerTransform.position);
             MoveForward(chaseSpeed);
         }
