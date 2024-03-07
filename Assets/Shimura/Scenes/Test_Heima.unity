@@ -566,6 +566,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: CatPlayer
       objectReference: {fileID: 0}
+    - target: {fileID: 5107299364269770149, guid: 1d3ad98c788cd5b43857e8ad8ed5682c, type: 3}
+      propertyPath: Loop
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5718427432676446729, guid: 1d3ad98c788cd5b43857e8ad8ed5682c, type: 3}
       propertyPath: gManager
       value: 
@@ -1931,7 +1935,7 @@ MonoBehaviour:
   HeartBlackImage1: {fileID: 1308885697}
   HeartBlackImage2: {fileID: 800318569}
   HeartBlackImage3: {fileID: 228120190}
-  manuke2: {fileID: 0}
+  manuke2: {fileID: 8300000, guid: 651196ad16f4f004b932c6ea17cd2cee, type: 3}
 --- !u!114 &1862358897
 MonoBehaviour:
   m_ObjectHideFlags: 0
