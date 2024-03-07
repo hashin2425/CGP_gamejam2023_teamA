@@ -5,6 +5,7 @@ using UnityEngine.UI;
 
 public class PanelChange : MonoBehaviour
 {
+    public static int titleLoadMode = 0;
     public GameObject title;
     public GameObject mainmenu;
     //public GameObject stage;
@@ -16,16 +17,25 @@ public class PanelChange : MonoBehaviour
 
     void Start()
     {
-        title.SetActive(true);
-        mainmenu.SetActive(false);
-        //stage.SetActive(false);
-        stage1.SetActive(false);
-        //stage2.SetActive(false);
-        //stage3.SetActive(false);
-        option.SetActive(false);
-        item.SetActive(false);
+        //元のやつ
+        //title.SetActive(true);
+        //mainmenu.SetActive(false);
+        ////stage.SetActive(false);
+        //stage1.SetActive(false);
+        ////stage2.SetActive(false);
+        ////stage3.SetActive(false);
+        //option.SetActive(false);
+        //item.SetActive(false);
+        switch (titleLoadMode)
+        {
+            case 0:
+                Title(); break;
+            case 1: //メニュー
+                Mainmenu(); break;
+            case 2: //ステージ選択
+                Stage1(); break;
+        }
     }
-
     public void Title()
     {
         title.SetActive(true);
