@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 1457927643307554094}
   - component: {fileID: 8356027679531112077}
   - component: {fileID: 1764562062850637349}
+  - component: {fileID: 7873182236615032516}
   m_Layer: 0
   m_Name: Suzu
   m_TagString: item
@@ -105,3 +106,16 @@ SphereCollider:
   serializedVersion: 3
   m_Radius: 0.2500193
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &7873182236615032516
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4549667311787958089}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5dda31bdab2145b42b5582da62d35c3e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  buff_debuff: {fileID: 0}
