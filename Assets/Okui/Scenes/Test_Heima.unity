@@ -4040,6 +4040,10 @@ PrefabInstance:
       value: PlayOneShot
       objectReference: {fileID: 0}
     - target: {fileID: 4516952665456949639, guid: d3dc51924e1db4f4f9cfecbe2074ad77, type: 3}
+      propertyPath: EventSystem
+      value: 
+      objectReference: {fileID: 1862358892}
+    - target: {fileID: 4516952665456949639, guid: d3dc51924e1db4f4f9cfecbe2074ad77, type: 3}
       propertyPath: audioSource
       value: 
       objectReference: {fileID: 27528532}
@@ -4125,7 +4129,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7485137255065346990, guid: d3dc51924e1db4f4f9cfecbe2074ad77, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 714944.9
+      value: 718779.25
       objectReference: {fileID: 0}
     - target: {fileID: 7553340598286400256, guid: d3dc51924e1db4f4f9cfecbe2074ad77, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target

@@ -17,6 +17,7 @@ public class PlayerController : MonoBehaviour
     bool isJumping = false;
     bool isSounding = false;
     public float jumpPower;
+    private int Level;
     void Start()
     {
         // ゲーム開始時にマウスカーソルをロック
@@ -25,12 +26,17 @@ public class PlayerController : MonoBehaviour
         Cursor.visible = false;
         runspeed = 1.0f;
         rb = GetComponent<Rigidbody>();
+        Level = DifficultyManager.DifficultyLevel;
     }
 
     void Update()
     {
         CAMERAmove();
-        shiftdash();
+        if(Level <= 2)
+        {
+            shiftdash();
+        }
+        
         Spacejump();
         if (isSounding == true)
         {
@@ -130,7 +136,7 @@ public class PlayerController : MonoBehaviour
         {
             runspeed = 1.0f;
             anim.SetBool("bl_Run", false);
-        }
+        }      
     }
     //ジャンプの関数
     void Spacejump()
