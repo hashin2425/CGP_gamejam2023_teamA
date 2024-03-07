@@ -54,10 +54,6 @@ public class GManager : MonoBehaviour
         {
             TogglePause();
         }
-        if (Input.GetKeyDown(KeyCode.C)) //仮
-        {
-            ChangeGameState(GameState.GameClear);
-        }
     }
     //ゲーム状態の変更
     public void ChangeGameState(GameState state)
