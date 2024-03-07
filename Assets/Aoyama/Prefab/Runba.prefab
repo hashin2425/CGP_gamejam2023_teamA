@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 873832115247428832}
   - component: {fileID: 5076310719144666498}
   - component: {fileID: 506118854577993996}
+  - component: {fileID: 7475346755317275745}
   m_Layer: 0
   m_Name: Runba
   m_TagString: item
@@ -150,6 +151,19 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 112
   m_CollisionDetection: 0
+--- !u!114 &7475346755317275745
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3226785605486474018}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5dda31bdab2145b42b5582da62d35c3e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  buff_debuff: {fileID: 0}
 --- !u!1 &4217393599550384560
 GameObject:
   m_ObjectHideFlags: 0
