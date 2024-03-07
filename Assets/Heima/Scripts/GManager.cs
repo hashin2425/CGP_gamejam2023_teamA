@@ -32,6 +32,8 @@ public class GManager : MonoBehaviour
     public List<Items> ItemList => itemList;
     private GameState currentGameState;
     public GameState CurrentGameState => currentGameState;
+    private AudioSource DiscoveredAudioSource;
+    private AudioSource UndiscoveredAudioSource;
     void Start()
     {
         //シーンロードをイベントリスナーに追加
@@ -69,13 +71,19 @@ public class GManager : MonoBehaviour
         {
             case GameState.GameOver:
                 uiManager.ActionGameOver(); 
-                Time.timeScale = 0;break;
+                Time.timeScale = 0;
+                DiscoveredAudioSource.Stop();
+                UndiscoveredAudioSource.Stop();
+                break;
             case GameState.GameClear:
                 StopCountdownCoroutine();
                 Save();
                 score += (int)countdownSec * SCORE_PER_SEC;
                 uiManager.ActionGameClear(); 
-                Time.timeScale = 0;break;
+                Time.timeScale = 0;
+                DiscoveredAudioSource.Stop();
+                UndiscoveredAudioSource.Stop();
+                break;
             default: break;
         }
     }
@@ -90,6 +98,10 @@ public class GManager : MonoBehaviour
         ChangeGameState(GameState.Playing);
         if (countdownCoroutine != null) StopCountdownCoroutine();
         countdownCoroutine = StartCoroutine(Countdown());
+        
+        DiscoveredAudioSource = GameObject.Find("Discovered_BGM_Audio Source").GetComponent<AudioSource>();
+        UndiscoveredAudioSource = GameObject.Find("Undiscovered_BGM_Audio Source").GetComponent<AudioSource>();
+        
     }
     //アイテムの数を返す
     public int GetItemNum()
@@ -145,6 +157,9 @@ public class GManager : MonoBehaviour
                 uiManager.ShowPauseUI(true);
                 Time.timeScale = 0;
                 Debug.Log("Pause");
+                //
+                DiscoveredAudioSource.Pause();
+                UndiscoveredAudioSource.Pause();
                 Cursor.lockState = CursorLockMode.Locked;
                 // カーソルを非表示にする
                 Cursor.visible = false;
@@ -154,6 +169,8 @@ public class GManager : MonoBehaviour
                 uiManager.ShowPauseUI(false);
                 Time.timeScale = 1;
                 Debug.Log("UnPause");
+                DiscoveredAudioSource.UnPause();
+                UndiscoveredAudioSource.UnPause();
                 //カーソルを表示
                 Cursor.visible = true;
                 //カーソルを自由に動かせるように
