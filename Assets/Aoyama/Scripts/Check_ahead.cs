@@ -21,7 +21,7 @@ public class Check_ahead : MonoBehaviour
 
     private void OnTriggerStay(Collider other)
     {
-        Debug.Log("障害物あり");
+        //Debug.Log("障害物あり");
 
         //親のオブジェクト名を取得
         string parentObjectName = transform.parent.name;

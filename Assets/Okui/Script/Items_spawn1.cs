@@ -26,9 +26,10 @@ public class Items_spawn1 : MonoBehaviour
             int random_number = Random.Range(0, numbers.Count);
             int ransu = numbers[random_number];
             GameObject randomItem = item[ransu];
-            Debug.Log(random_number);
-            Debug.Log(randomItem);
-            Instantiate(randomItem, spawnPoint[count].transform.position, Quaternion.identity);
+            //Debug.Log(random_number);
+            //Debug.Log(randomItem);
+            GameObject instance = Instantiate(randomItem, spawnPoint[count].transform.position, randomItem.transform.rotation);
+            instance.name = randomItem.name;
 
             numbers.RemoveAt(random_number);
 

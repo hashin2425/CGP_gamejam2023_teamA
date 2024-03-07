@@ -5,10 +5,10 @@ using static GameData.ConstSettings;
 
 public class GetItem : MonoBehaviour
 {
-    [SerializeField] GManager gManager;
+    private GManager gManager;
     void Start()
     {
-        
+         gManager = GManager.Instance;
     }
 
     void Update()
@@ -24,8 +24,10 @@ public class GetItem : MonoBehaviour
             //ここに獲得したときの処理
             Items item = Items.Mouse;
             //オブジェクトの名前と名前空間のItemsと比較
+            Debug.Log(other.gameObject.name);
             switch (other.gameObject.name)
             {
+                
                 case "Nezumi":
                     item = Items.Mouse;break;
                 case "Sakana":
