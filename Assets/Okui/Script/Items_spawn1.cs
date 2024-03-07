@@ -21,7 +21,7 @@ public class Items_spawn1 : MonoBehaviour
             numbers.Add (i);
         }
 
-        while(numbers.Count>0)
+        while(count < spawnPoint.Length)
         {
             int random_number = Random.Range(0, numbers.Count);
             int ransu = numbers[random_number];
