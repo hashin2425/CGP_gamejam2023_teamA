@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 6803087059460570752}
   - component: {fileID: 2085136781191737019}
   - component: {fileID: 4354021687649467414}
+  - component: {fileID: 3055355867945288686}
   m_Layer: 0
   m_Name: Koban
   m_TagString: item
@@ -105,3 +106,16 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.33333397, y: 0.016666602, z: 0.50000095}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &3055355867945288686
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7085674889194124881}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5dda31bdab2145b42b5582da62d35c3e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  buff_debuff: {fileID: 0}

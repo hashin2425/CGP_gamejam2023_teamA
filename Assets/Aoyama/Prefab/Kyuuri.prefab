@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 7112579220037169315}
   - component: {fileID: 4237283266285976818}
   - component: {fileID: 1389819981352124709}
+  - component: {fileID: 7648942081195536814}
   m_Layer: 0
   m_Name: Kyuuri
   m_TagString: item
@@ -107,3 +108,16 @@ CapsuleCollider:
   m_Height: 0.49999395
   m_Direction: 1
   m_Center: {x: 0.000209257, y: 0.14885597, z: 0}
+--- !u!114 &7648942081195536814
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6556396788561753027}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5dda31bdab2145b42b5582da62d35c3e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  buff_debuff: {fileID: 0}

@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 1022076590681595721}
   - component: {fileID: 4998963681231904020}
   - component: {fileID: 3252160545232007709}
+  - component: {fileID: -2476189376428883963}
   m_Layer: 0
   m_Name: Shinzyu
   m_TagString: item
@@ -105,3 +106,16 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 2.8763156, y: 0.3758421, z: 2.6054277}
   m_Center: {x: -0.008820294, y: -0.02109781, z: -0.023225129}
+--- !u!114 &-2476189376428883963
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8988745998474947345}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5dda31bdab2145b42b5582da62d35c3e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  buff_debuff: {fileID: 0}
