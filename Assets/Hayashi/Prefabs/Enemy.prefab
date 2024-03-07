@@ -251,6 +251,7 @@ MonoBehaviour:
   rotationDuration: 0.8
   sightCollider: {fileID: 5864240872488239250}
   rayStartPoint: {fileID: 4224517525100527583}
+  audioMixer: {fileID: 24100000, guid: 9a7eff4d2676b624686c3a5cd303cc04, type: 2}
 --- !u!54 &3222953594839490755
 Rigidbody:
   m_ObjectHideFlags: 0
