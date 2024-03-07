@@ -21,7 +21,7 @@ public class Check_ahead : MonoBehaviour
 
     private void OnTriggerStay(Collider other)
     {
-        if (other.CompareTag("Wall"))
+        if (!other.CompareTag("MainCamera"))
         {
             //Debug.Log("障害物あり");
 
