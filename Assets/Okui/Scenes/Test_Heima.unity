@@ -2262,7 +2262,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7485137255065346990, guid: d3dc51924e1db4f4f9cfecbe2074ad77, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 896454.9
+      value: 992356.6
       objectReference: {fileID: 0}
     - target: {fileID: 8357644232909274475, guid: d3dc51924e1db4f4f9cfecbe2074ad77, type: 3}
       propertyPath: m_AnchorMax.y
@@ -4319,24 +4319,87 @@ PrefabInstance:
       propertyPath: m_Center.z
       value: -0.7036791
       objectReference: {fileID: 0}
+    - target: {fileID: 3967835928321272964, guid: c9011665e0cfda544a2a42659de6d158, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 302
+      objectReference: {fileID: 0}
+    - target: {fileID: 3967835928321272964, guid: c9011665e0cfda544a2a42659de6d158, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 175
+      objectReference: {fileID: 0}
     - target: {fileID: 4626307705534199466, guid: c9011665e0cfda544a2a42659de6d158, type: 3}
       propertyPath: m_Name
       value: "Gate(\u4EEE)"
       objectReference: {fileID: 0}
+    - target: {fileID: 4755201017148792677, guid: c9011665e0cfda544a2a42659de6d158, type: 3}
+      propertyPath: m_Type
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4755201017148792677, guid: c9011665e0cfda544a2a42659de6d158, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 47c3afc338a06e144a0cd414173e6244, type: 3}
+    - target: {fileID: 4755201017148792677, guid: c9011665e0cfda544a2a42659de6d158, type: 3}
+      propertyPath: m_PreserveAspect
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5126749919637217423, guid: c9011665e0cfda544a2a42659de6d158, type: 3}
+      propertyPath: m_Type
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5126749919637217423, guid: c9011665e0cfda544a2a42659de6d158, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 67dd8d54ae6aab74cb042aeea9a3a901, type: 3}
+    - target: {fileID: 5126749919637217423, guid: c9011665e0cfda544a2a42659de6d158, type: 3}
+      propertyPath: m_PreserveAspect
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6040215415588647801, guid: c9011665e0cfda544a2a42659de6d158, type: 3}
+      propertyPath: m_Type
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6040215415588647801, guid: c9011665e0cfda544a2a42659de6d158, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 9313550246222dc48b105f1a6b8c91af, type: 3}
+    - target: {fileID: 6040215415588647801, guid: c9011665e0cfda544a2a42659de6d158, type: 3}
+      propertyPath: m_PreserveAspect
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6049657774964634890, guid: c9011665e0cfda544a2a42659de6d158, type: 3}
       propertyPath: m_Enabled
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7163236284530726209, guid: c9011665e0cfda544a2a42659de6d158, type: 3}
       propertyPath: escapeDialogue
       value: 
       objectReference: {fileID: 674148496}
+    - target: {fileID: 7298412982954221021, guid: c9011665e0cfda544a2a42659de6d158, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 302
+      objectReference: {fileID: 0}
+    - target: {fileID: 7298412982954221021, guid: c9011665e0cfda544a2a42659de6d158, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 175
+      objectReference: {fileID: 0}
+    - target: {fileID: 7892592075869981026, guid: c9011665e0cfda544a2a42659de6d158, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 302
+      objectReference: {fileID: 0}
+    - target: {fileID: 7892592075869981026, guid: c9011665e0cfda544a2a42659de6d158, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 175
+      objectReference: {fileID: 0}
     - target: {fileID: 8635464704010440829, guid: c9011665e0cfda544a2a42659de6d158, type: 3}
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
-    m_RemovedGameObjects: []
+    m_RemovedGameObjects:
+    - {fileID: 3699546223706049037, guid: c9011665e0cfda544a2a42659de6d158, type: 3}
+    - {fileID: 157805883704732825, guid: c9011665e0cfda544a2a42659de6d158, type: 3}
+    - {fileID: 8911156373622583397, guid: c9011665e0cfda544a2a42659de6d158, type: 3}
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c9011665e0cfda544a2a42659de6d158, type: 3}
