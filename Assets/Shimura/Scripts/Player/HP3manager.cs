@@ -8,9 +8,12 @@ public class HP3manager : MonoBehaviour
     [SerializeField] GameObject HeartBlackImage1;
     [SerializeField] GameObject HeartBlackImage2;
     [SerializeField] GameObject HeartBlackImage3;
+    [SerializeField] AudioClip manuke2;
+    GameObject SE_AudioSource;
     void Start()
     {
         DisplayHPImage();
+        SE_AudioSource = GameObject.Find ("SE_Audio Source");
     }
 
     void Update()
@@ -22,6 +25,11 @@ public class HP3manager : MonoBehaviour
     {
         HP--;
         DisplayHPImage();
+        if (HP == 0)
+        {
+            GManager.Instance.ChangeGameState(GameData.ConstSettings.GameState.GameOver);
+            SE_AudioSource.GetComponent<AudioSource>().PlayOneShot(manuke2);
+        }
     }
     //HPが増えた時の処理の関数
     public void IncreaseHp()

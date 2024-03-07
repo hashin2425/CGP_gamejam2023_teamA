@@ -3,7 +3,9 @@ guid: d3e8977433b06904b91f23b4a55cbdcc
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - nezumiController: {fileID: 5111317904337636692, guid: 816680e38a2df2e4198dabed748810e9, type: 3}
+  - runbaController: {fileID: 873832115247428832, guid: 2c28aac9decdf45409058474a383097c, type: 3}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 
