@@ -14,7 +14,11 @@ public class ButtonController : MonoBehaviour
             case "stage":
                 SceneManager.LoadScene(GAMESCENE_NAME); break;
             case "menu":
-                SceneManager.LoadScene("Test_Menu"); break;
+                PanelChange.titleLoadMode = 1;
+                SceneManager.LoadScene(MENUSCENE_NAME); break;
+            case "stageSelect":
+                PanelChange.titleLoadMode = 2;
+                SceneManager.LoadScene(MENUSCENE_NAME); break;
             case "restart":
                 GManager.Instance.StopCountdownCoroutine();
                 SceneManager.LoadScene(SceneManager.GetActiveScene().name); break;

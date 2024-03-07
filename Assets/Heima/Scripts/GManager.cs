@@ -145,12 +145,19 @@ public class GManager : MonoBehaviour
                 uiManager.ShowPauseUI(true);
                 Time.timeScale = 0;
                 Debug.Log("Pause");
+                Cursor.lockState = CursorLockMode.Locked;
+                // カーソルを非表示にする
+                Cursor.visible = false;
                 break;
             case GameState.Pause:
                 ChangeGameState(GameState.Playing);
                 uiManager.ShowPauseUI(false);
                 Time.timeScale = 1;
                 Debug.Log("UnPause");
+                //カーソルを表示
+                Cursor.visible = true;
+                //カーソルを自由に動かせるように
+                Cursor.lockState = CursorLockMode.None;
                 break;
             default: break;
         }
