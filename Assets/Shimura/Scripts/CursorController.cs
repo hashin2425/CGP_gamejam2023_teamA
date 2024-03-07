@@ -23,7 +23,6 @@ public class CursorController : MonoBehaviour
             //カーソルを自由に動かせるように
             Cursor.lockState = CursorLockMode.None;
             //Time.timeScaleを0に
-            Time.timeScale = 0;
         }
 
         if (Input.GetKeyDown(KeyCode.Return))
