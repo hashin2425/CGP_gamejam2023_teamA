@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Audio;
 
 public class EnemyActions : MonoBehaviour
 {
@@ -16,12 +17,15 @@ public class EnemyActions : MonoBehaviour
     private float timer;
     private bool isRotating = false;
     private Transform playerTransform;
+    [SerializeField] AudioMixer audioMixer;
 
     private void Start()
     {
         enemyCollider = GetComponent<BoxCollider>();
         playerTransform = GameObject.FindWithTag("Player").transform;
         ChangeDirection();
+        audioMixer.SetFloat("UnDiscovered_BGM", 0f);
+        audioMixer.SetFloat("Discovered_BGM", -80f);
     }
 
     private void FixedUpdate()
@@ -33,6 +37,8 @@ public class EnemyActions : MonoBehaviour
             newVector3.y = transform.position.y;
             transform.LookAt(newVector3);
             MoveForward(chaseSpeed);
+            audioMixer.SetFloat("Discovered_BGM", 0f);
+            audioMixer.SetFloat("UnDiscovered_BGM", -80f);
         }
         else
         {
@@ -50,6 +56,8 @@ public class EnemyActions : MonoBehaviour
             {
                 ChangeDirection();
             }
+            audioMixer.SetFloat("UnDiscovered_BGM", 0f);
+            audioMixer.SetFloat("Discovered_BGM", -80f);
         }
     }
 
