@@ -2447,7 +2447,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7485137255065346990, guid: d3dc51924e1db4f4f9cfecbe2074ad77, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 342790.8
+      value: 709681.94
       objectReference: {fileID: 0}
     - target: {fileID: 7553340598286400256, guid: d3dc51924e1db4f4f9cfecbe2074ad77, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
@@ -4227,9 +4227,9 @@ MonoBehaviour:
   - {fileID: 952018331}
   - {fileID: 361521613}
   Enemy:
-  - {fileID: 2238908628911233414, guid: 72d9d210fcbc47b4abbf7953acbdcafd, type: 3}
-  - {fileID: 2238908628911233414, guid: 72d9d210fcbc47b4abbf7953acbdcafd, type: 3}
-  - {fileID: 2238908628911233414, guid: 72d9d210fcbc47b4abbf7953acbdcafd, type: 3}
+  - {fileID: 4647986505343145566, guid: 198cccb3dfdd8ad44b2714ab11c672be, type: 3}
+  - {fileID: 4647986505343145566, guid: 198cccb3dfdd8ad44b2714ab11c672be, type: 3}
+  - {fileID: 4647986505343145566, guid: 198cccb3dfdd8ad44b2714ab11c672be, type: 3}
 --- !u!4 &2146802401
 Transform:
   m_ObjectHideFlags: 0

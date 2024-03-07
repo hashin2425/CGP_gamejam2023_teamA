@@ -304,5 +304,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 367b23c39a1ed4146b821426b90a2233, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  searchAngle: 70
+  searchAngle: 40
   nezumiController: {fileID: 5111317904337636692}
