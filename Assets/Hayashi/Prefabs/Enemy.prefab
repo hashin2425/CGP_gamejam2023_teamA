@@ -159,7 +159,7 @@ CapsuleCollider:
   m_Radius: 0.2
   m_Height: 0.2
   m_Direction: 1
-  m_Center: {x: 0, y: 0.25, z: 0.25}
+  m_Center: {x: 0, y: 0.25, z: 0.35}
 --- !u!1 &4647986505343145566
 GameObject:
   m_ObjectHideFlags: 0
@@ -636,10 +636,10 @@ CapsuleCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 1
-  m_Height: 2.44
+  m_Radius: 0.85
+  m_Height: 2.3
   m_Direction: 2
-  m_Center: {x: 0, y: -1.1, z: 0}
+  m_Center: {x: 0, y: -1.15, z: 0}
 --- !u!4 &2951942169630949009 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 359c424cf65f1624a83440d67e6b1b6a, type: 3}
