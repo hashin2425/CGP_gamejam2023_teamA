@@ -10,9 +10,12 @@ public class PlayerController : MonoBehaviour
     [Header("y方向の視点感度")] public float y_sensi;
     [Header("カメラ")] [SerializeField] GameObject Maincamera;
     [SerializeField] Animator anim;
+    //[SerializeField] AudioClip footsteps;
+    [SerializeField] AudioSource audioSource;
     float runspeed; // これはrunSPEEDと違う
     Rigidbody rb;
     bool isJumping = false;
+    bool isSounding = false;
     public float jumpPower;
     void Start()
     {
@@ -44,12 +47,20 @@ public class PlayerController : MonoBehaviour
         if (_input_WS != 0 || _input_AD != 0)
         {  
             StartCoroutine(WASDanim1());
+            if (!isSounding)
+            {
+                audioSource.Play();
+                isSounding=true;
+            }
         }
         else
         {
             StartCoroutine(WASDanim2());
+            isSounding=false;
+            audioSource.Stop();
         }
     }
+
     //WASDアニメーション用コルーチン(歩き始め)
      IEnumerator WASDanim1()
     {
