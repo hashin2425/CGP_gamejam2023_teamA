@@ -54,10 +54,6 @@ public class GManager : MonoBehaviour
         {
             TogglePause();
         }
-        if (Input.GetKeyDown(KeyCode.C)) //仮
-        {
-            ChangeGameState(GameState.GameClear);
-        }
     }
     //ゲーム状態の変更
     public void ChangeGameState(GameState state)
@@ -72,12 +68,14 @@ public class GManager : MonoBehaviour
         switch (state)
         {
             case GameState.GameOver:
-                uiManager.ActionGameOver(); break;
+                uiManager.ActionGameOver(); 
+                Time.timeScale = 0;break;
             case GameState.GameClear:
                 StopCountdownCoroutine();
                 Save();
                 score += (int)countdownSec * SCORE_PER_SEC;
-                uiManager.ActionGameClear(); break;
+                uiManager.ActionGameClear(); 
+                Time.timeScale = 0;break;
             default: break;
         }
     }

@@ -6,7 +6,7 @@ using static GameData.ConstSettings;
 public class ClickCreaGate : MonoBehaviour
 {
     [SerializeField] GameObject GateCanvas;
-    [SerializeField] GameObject escapeDialogue;
+    [SerializeField] Canvas escapeDialogue;
     [SerializeField] TextMeshProUGUI confirmText;
     [SerializeField] GameObject yButton;
     [SerializeField] GameObject nButton;
@@ -15,7 +15,7 @@ public class ClickCreaGate : MonoBehaviour
     void Start()
     {
         GateCanvas.SetActive(false);
-        escapeDialogue.SetActive(false);
+        escapeDialogue.enabled = false;
         gManager = GManager.Instance;
         yButton.GetComponent<Button>().onClick.AddListener(OnYesButtonClicked);
         nButton.GetComponent<Button>().onClick.AddListener(OnNoButtonClicked);
@@ -46,7 +46,7 @@ public class ClickCreaGate : MonoBehaviour
                     yButton.SetActive(true);
                     nButton.SetActive(true);
                     okButton.SetActive(false);
-                    escapeDialogue.SetActive(true);
+                    escapeDialogue.enabled = true;
                 }
                 else
                 {
@@ -55,7 +55,7 @@ public class ClickCreaGate : MonoBehaviour
                     yButton.SetActive(false);
                     nButton.SetActive(false);
                     okButton.SetActive(true);
-                    escapeDialogue.SetActive(true);
+                    escapeDialogue.enabled = true;
                 }
             }
         }
@@ -69,19 +69,19 @@ public class ClickCreaGate : MonoBehaviour
     }
     void OnYesButtonClicked()
     {
-        escapeDialogue.SetActive(false);
+        escapeDialogue.enabled = false;
         gManager.ChangeGameState(GameState.GameClear);
     }
     void OnNoButtonClicked()
     {
-        escapeDialogue.SetActive(false);
+        escapeDialogue.enabled = false;
         Time.timeScale = 1;
         Cursor.visible = false;
         Cursor.lockState = CursorLockMode.Locked;
     }
     void OnOkButtonClicked()
     {
-        escapeDialogue.SetActive(false);
+        escapeDialogue.enabled = false;
         Time.timeScale = 1;
         Cursor.visible = false;
         Cursor.lockState = CursorLockMode.Locked;
