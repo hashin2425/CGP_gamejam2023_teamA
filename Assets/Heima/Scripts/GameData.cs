@@ -6,26 +6,26 @@ namespace GameData
     public static class ConstSettings
     {
         public static readonly float TIME_LIMIT_SEC = 180.0f;
-        public static readonly int SCORE_PER_SEC = 100;
+        public static readonly int SCORE_PER_SEC = 50;
         public static readonly string GAMESCENE_NAME = "Test_Heima";
         public static readonly string MENUSCENE_NAME = "Title_Scene";
         public static IReadOnlyList<int> requiredItemNum = new List<int>() { 0, 3, 5 };
         public static IReadOnlyDictionary<Items, int> itemScores = new Dictionary<Items, int>() {
-            { Items.Mouse, 0 },
-            { Items.Fish, 0 },
-            { Items.Roomba, 0 },
-            { Items.Matatabi, 0 },
-            { Items.CannedFood, 0},
-            { Items.GoldfishBowl, 0 },
-            { Items.Dorayaki, 0 },
-            { Items.Cucumber, 0 },
-            { Items.Geta, 0 },
-            { Items.BristleGrass, 0 },
-            { Items.Koban, 0 },
-            { Items.Pearl, 0 },
-            { Items.Scroll, 0 },
-            { Items.BonitoFlakes, 0 },
-            { Items.Bell, 0}
+            { Items.Mouse, 800 },
+            { Items.Fish, 500 },
+            { Items.Roomba, 700 },
+            { Items.Matatabi, 300 },
+            { Items.CannedFood, 500},
+            { Items.GoldfishBowl, 500 },
+            { Items.Dorayaki, 500 },
+            { Items.Cucumber, 500 },
+            { Items.Geta, 500 },
+            { Items.BristleGrass, 1000 },
+            { Items.Koban, 500 },
+            { Items.Pearl, 600 },
+            { Items.Scroll, 400 },
+            { Items.BonitoFlakes, 500 },
+            { Items.Bell, 500}
         };
         public enum GameState
         {
