@@ -38,6 +38,7 @@ public class UIManager : MonoBehaviour
     [SerializeField] AudioSource audioSource;
     [SerializeField] AudioClip gameCreaSE;
     [SerializeField] AudioClip gameOverSE;
+    [SerializeField] GameObject EventSystem;
 
     private GManager gManager;
     void Awake()
@@ -120,7 +121,11 @@ public class UIManager : MonoBehaviour
     public void ActionGameOver()
     {
         gameOverUI.enabled = true;
-        audioSource.GetComponent<AudioSource>().PlayOneShot(gameOverSE);
+        if (EventSystem.gameObject.GetComponent<HP3manager>().HP != 0)
+        {
+            audioSource.GetComponent<AudioSource>().PlayOneShot(gameOverSE);
+        }
+        
     }
     //�Q�[���N���A���̏���
     public void ActionGameClear()
