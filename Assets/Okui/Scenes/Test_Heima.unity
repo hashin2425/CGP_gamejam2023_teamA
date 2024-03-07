@@ -2179,6 +2179,10 @@ PrefabInstance:
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4112472581988561393, guid: d3dc51924e1db4f4f9cfecbe2074ad77, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5773645529566497001, guid: d3dc51924e1db4f4f9cfecbe2074ad77, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -2249,7 +2253,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7485137255065346990, guid: d3dc51924e1db4f4f9cfecbe2074ad77, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 642588.56
+      value: 801616
       objectReference: {fileID: 0}
     - target: {fileID: 8357644232909274475, guid: d3dc51924e1db4f4f9cfecbe2074ad77, type: 3}
       propertyPath: m_AnchorMax.y
@@ -2265,6 +2269,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8783508252105636840, guid: d3dc51924e1db4f4f9cfecbe2074ad77, type: 3}
       propertyPath: m_SizeDelta.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8810159826329806511, guid: d3dc51924e1db4f4f9cfecbe2074ad77, type: 3}
+      propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 9210781071558718084, guid: d3dc51924e1db4f4f9cfecbe2074ad77, type: 3}
@@ -3152,6 +3160,10 @@ PrefabInstance:
       propertyPath: m_StaticEditorFlags
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3774608951414501026, guid: 8dc3c79cba53dff4691a4894fb475e43, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.03
+      objectReference: {fileID: 0}
     - target: {fileID: 8865620330250460656, guid: 8dc3c79cba53dff4691a4894fb475e43, type: 3}
       propertyPath: m_LocalPosition.z
       value: 0.2
@@ -4025,6 +4037,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 285174831}
     m_Modifications:
     - target: {fileID: 1954729963419928922, guid: 5f6a835f9ccd2ef479fac29ff739f0a9, type: 3}
+      propertyPath: stopTime
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1954729963419928922, guid: 5f6a835f9ccd2ef479fac29ff739f0a9, type: 3}
       propertyPath: playerCon
       value: 
       objectReference: {fileID: 285174829}
@@ -4278,10 +4294,18 @@ PrefabInstance:
       propertyPath: m_Name
       value: "Gate(\u4EEE)"
       objectReference: {fileID: 0}
+    - target: {fileID: 6049657774964634890, guid: c9011665e0cfda544a2a42659de6d158, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7163236284530726209, guid: c9011665e0cfda544a2a42659de6d158, type: 3}
       propertyPath: escapeDialogue
       value: 
       objectReference: {fileID: 674148496}
+    - target: {fileID: 8635464704010440829, guid: c9011665e0cfda544a2a42659de6d158, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

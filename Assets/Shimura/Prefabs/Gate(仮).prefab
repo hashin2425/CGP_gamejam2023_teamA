@@ -745,7 +745,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   GateCanvas: {fileID: 2812824339905539426}
-  escapeDialogue: {fileID: 8635464704010440829}
+  escapeDialogue: {fileID: 6049657774964634890}
   confirmText: {fileID: 5181870848349035818}
   yButton: {fileID: 4233077900633689979}
   nButton: {fileID: 5576041482224168229}
