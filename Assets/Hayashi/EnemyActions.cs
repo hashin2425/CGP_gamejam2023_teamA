@@ -10,6 +10,7 @@ public class EnemyActions : MonoBehaviour
     [Header("敵キャラが回転にかける時間")] public float rotationDuration = 1.2f;
 
     [SerializeField] BoxCollider sightCollider;
+    [SerializeField] Transform rayStartPoint;
 
     private BoxCollider enemyCollider;
     private float timer;
@@ -28,9 +29,9 @@ public class EnemyActions : MonoBehaviour
         timer += Time.deltaTime;
         if (CanFindPlayer())
         {
-            Vector3 vector3 = playerTransform.position;
-            vector3.x = 0; vector3.z = 0;
-            transform.LookAt(playerTransform.position);
+            Vector3 newVector3 = playerTransform.position;
+            newVector3.y = transform.position.y;
+            transform.LookAt(newVector3);
             MoveForward(chaseSpeed);
         }
         else
@@ -103,7 +104,7 @@ public class EnemyActions : MonoBehaviour
             if (col.CompareTag("Player"))
             {
                 RaycastHit hit;
-                if (Physics.Raycast(transform.position, col.transform.position - transform.position, out hit))
+                if (Physics.Raycast(rayStartPoint.position, col.transform.position - rayStartPoint.position, out hit))
                 {
                     if (hit.collider.CompareTag("Player"))
                     {
