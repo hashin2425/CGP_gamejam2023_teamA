@@ -8,6 +8,7 @@ public class NezumiController : MonoBehaviour
     [Header("移動速度(1秒で進む距離 プレイヤーより遅めに)")]public float speed = 3f;   
     [Header("「移動 → 止まる」ループの移動する時間")]public float moveTime = 2.0f; //～秒動いて、
     [Header("「移動 → 止まる」ループの止まる時間")]public float stopTime = 1.0f; //～秒止まる
+    [Header("走る倍率2～2.5")]public float run = 2.5f;
     [Header("逃げる（走る）時間")]public float runTime = 5.0f; //～秒走る
     
     private float moveTimeCount; //移動している時間の計測
@@ -58,7 +59,7 @@ public class NezumiController : MonoBehaviour
         //逃げるときの行動
         if (normal == false)
         {
-            transform.position += -transform.right * 2 * speed * Time.deltaTime; //通常時の2倍の速さで逃げる
+            transform.position += -transform.right * run * speed * Time.deltaTime; //通常時の2倍の速さで逃げる
 
             if(rotationTimeCount > 1)
             {
@@ -86,12 +87,12 @@ public class NezumiController : MonoBehaviour
     public void RunAway()
     {
         
-        //Debug.Log("逃げろ！");
+        Debug.Log("逃げろ！");
 
         normal = false;
 
         //プレイヤーから逃げるために後ろを向く
-        Vector3 course = new Vector3(0, Random.Range(150, 210), 0);
+        Vector3 course = new Vector3(0, Random.Range(60, 120), 0);
         transform.localRotation *= Quaternion.Euler(course);
 
         //カウントを0に戻す

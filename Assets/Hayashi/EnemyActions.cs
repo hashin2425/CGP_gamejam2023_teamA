@@ -9,6 +9,7 @@ public class EnemyActions : MonoBehaviour
     [Header("敵キャラがプレイヤーを追いかけるときの移動速度")] public float chaseSpeed = 1.0f;
     [Header("回転終了後に次の方向へ移動するまでの時間")] public float changeDirectionInterval = 10.0f;
     [Header("敵キャラが回転にかける時間")] public float rotationDuration = 1.2f;
+    [Header("敵キャラがPlayerを追いかける時間")] private float chaseTime = 3.0f;
 
     [SerializeField] BoxCollider sightCollider;
     [SerializeField] Transform rayStartPoint;
@@ -18,6 +19,7 @@ public class EnemyActions : MonoBehaviour
     private bool isRotating = false;
     private Transform playerTransform;
     [SerializeField] AudioMixer audioMixer;
+    private bool isChase=false;
 
     private void Start()
     {
@@ -31,8 +33,9 @@ public class EnemyActions : MonoBehaviour
     private void FixedUpdate()
     {
         timer += Time.deltaTime;
-        if (CanFindPlayer())
+        if (CanFindPlayer() || isChase)
         {
+            StartCoroutine(ChasePlayer());
             Vector3 newVector3 = playerTransform.position;
             newVector3.y = transform.position.y;
             transform.LookAt(newVector3);
@@ -60,7 +63,15 @@ public class EnemyActions : MonoBehaviour
             audioMixer.SetFloat("Discovered_BGM", -80f);
         }
     }
-
+    //コルーチン
+    IEnumerator ChasePlayer()
+    {
+        isChase=true;
+         Debug.Log("oikaketeru");
+        yield return new WaitForSeconds(chaseTime);
+        isChase=false;
+        Debug.Log("minogasita");
+    }
     private void MoveForward(float speed = 1.0f)
     {
         GetComponent<Rigidbody>().velocity = transform.forward * speed;

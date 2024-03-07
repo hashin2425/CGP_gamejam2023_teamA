@@ -42,7 +42,7 @@ public class ClickCreaGate : MonoBehaviour
                 Time.timeScale = 0;
                 if (gManager.canEscape())
                 {
-                    confirmText.SetText("Do you want to escape?");
+                    confirmText.SetText("脱出しますか？");
                     yButton.SetActive(true);
                     nButton.SetActive(true);
                     okButton.SetActive(false);
@@ -51,7 +51,7 @@ public class ClickCreaGate : MonoBehaviour
                 else
                 {
                     int remainItemNum = requiredItemNum[DifficultyManager.DifficultyLevel - 1] - gManager.GetItemNum();
-                    confirmText.SetText("You can't escape!\nYou have to collect " + remainItemNum.ToString() + " items.");
+                    confirmText.SetText("まだ脱出できません！\n必要アイテム数: " + remainItemNum.ToString() + "個");
                     yButton.SetActive(false);
                     nButton.SetActive(false);
                     okButton.SetActive(true);
