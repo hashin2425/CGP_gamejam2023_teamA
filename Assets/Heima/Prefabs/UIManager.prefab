@@ -1511,7 +1511,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 67181.12}
+  m_AnchoredPosition: {x: 0, y: 160468.78}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &8699590692386730253
@@ -3670,6 +3670,9 @@ MonoBehaviour:
   iconScroll: {fileID: 8484382671716325275, guid: db5e47c3c1f73be4887e03d91d76836a, type: 3}
   iconBonitoFrakes: {fileID: 8484382671716325275, guid: f0900abceb7d1ff48a5929f3d413ca84, type: 3}
   iconBell: {fileID: 8484382671716325275, guid: f0ffde6e96d064b4c931aae3b3602a5e, type: 3}
+  audioSource: {fileID: 0}
+  gameCreaSE: {fileID: 8300000, guid: 41557af3adb45bb4aa5db4e4410ef62e, type: 3}
+  gameOverSE: {fileID: 8300000, guid: 8791346124e6e85488afc909bfb13dfd, type: 3}
 --- !u!1 &6751142028356130213
 GameObject:
   m_ObjectHideFlags: 0

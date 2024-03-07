@@ -19,7 +19,7 @@ public class UIManager : MonoBehaviour
     [SerializeField] Canvas gameClearUI;
     [SerializeField] Canvas itemUI;
     [SerializeField] GameObject content;
-    //ˆÈ‰ºƒAƒCƒeƒ€ƒAƒCƒRƒ“‚Ìprefab
+    //ï¿½È‰ï¿½ï¿½Aï¿½Cï¿½eï¿½ï¿½ï¿½Aï¿½Cï¿½Rï¿½ï¿½ï¿½ï¿½prefab
     [SerializeField] GameObject iconMouse;
     [SerializeField] GameObject iconFish;
     [SerializeField] GameObject iconRoomba;
@@ -35,6 +35,10 @@ public class UIManager : MonoBehaviour
     [SerializeField] GameObject iconScroll;
     [SerializeField] GameObject iconBonitoFrakes;
     [SerializeField] GameObject iconBell;
+    [SerializeField] AudioSource audioSource;
+    [SerializeField] AudioClip gameCreaSE;
+    [SerializeField] AudioClip gameOverSE;
+
     private GManager gManager;
     void Awake()
     {
@@ -47,19 +51,19 @@ public class UIManager : MonoBehaviour
     {
         Initialize();
     }
-    //‰Šú‰»ˆ—
+    //ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
     void Initialize()
     {
-        //GManager‚ÌƒCƒ“ƒXƒ^ƒ“ƒX‚ğæ“¾
+        //GManagerï¿½ÌƒCï¿½ï¿½ï¿½Xï¿½^ï¿½ï¿½ï¿½Xï¿½ï¿½ï¿½æ“¾
         gManager = GManager.Instance;
-        //UI‚Ì‰Šú‰»
+        //UIï¿½Ìï¿½ï¿½ï¿½ï¿½ï¿½
         pauseUI.enabled = false;
         gameClearUI.enabled = false;
         gameOverUI.enabled = false;
         itemUI.enabled = false;
         SetCountdownText(TIME_LIMIT_SEC);
     }
-    //ƒAƒCƒeƒ€•\¦‚Ì€”õ
+    //ï¿½Aï¿½Cï¿½eï¿½ï¿½ï¿½\ï¿½ï¿½ï¿½Ìï¿½ï¿½ï¿½
     void PrepItemScrollView(List<Items> itemList)
     {
         GameObject itemPrefab = null;
@@ -102,29 +106,31 @@ public class UIManager : MonoBehaviour
             iconInstance.transform.SetParent(content.transform, false);
         }
     }
-    //ƒAƒCƒeƒ€UI‚Ì•\¦Ø‚è‘Ö‚¦
+    //ï¿½Aï¿½Cï¿½eï¿½ï¿½UIï¿½Ì•\ï¿½ï¿½ï¿½Ø‚ï¿½Ö‚ï¿½
     public void ShowItemUI(bool tf)
     {
         itemUI.enabled = tf;
     }
-    //ƒ|[ƒYUI‚Ì•\¦Ø‚è‘Ö‚¦
+    //ï¿½|ï¿½[ï¿½YUIï¿½Ì•\ï¿½ï¿½ï¿½Ø‚ï¿½Ö‚ï¿½
     public void ShowPauseUI(bool tf)
     {
         pauseUI.enabled = tf;
     }
-    //ƒQ[ƒ€ƒI[ƒo[‚Ìˆ—
+    //ï¿½Qï¿½[ï¿½ï¿½ï¿½Iï¿½[ï¿½oï¿½[ï¿½ï¿½ï¿½Ìï¿½ï¿½ï¿½
     public void ActionGameOver()
     {
         gameOverUI.enabled = true;
+        audioSource.GetComponent<AudioSource>().PlayOneShot(gameOverSE);
     }
-    //ƒQ[ƒ€ƒNƒŠƒA‚Ìˆ—
+    //ï¿½Qï¿½[ï¿½ï¿½ï¿½Nï¿½ï¿½ï¿½Aï¿½ï¿½ï¿½Ìï¿½ï¿½ï¿½
     public void ActionGameClear()
     {
         PrepItemScrollView(gManager.ItemList);
         scoreText.SetText("Score: " + gManager.Score.ToString("N0"));
+        audioSource.GetComponent<AudioSource>().PlayOneShot(gameCreaSE);
         gameClearUI.enabled = true;
     }
-    //ƒJƒEƒ“ƒgƒ_ƒEƒ“•\¦
+    //ï¿½Jï¿½Eï¿½ï¿½ï¿½gï¿½_ï¿½Eï¿½ï¿½ï¿½\ï¿½ï¿½
     public void SetCountdownText(float sec)
     {
         var span = new TimeSpan(0, 0, (int)sec);

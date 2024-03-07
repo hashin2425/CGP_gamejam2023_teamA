@@ -342,7 +342,6 @@ MonoBehaviour:
   y_sensi: 1000
   Maincamera: {fileID: 8903677915703449286}
   anim: {fileID: 6604468641970805497}
-  footsteps: {fileID: 8300000, guid: 6c563f6f9d7bf1d4aab1776507a4397d, type: 3}
   audioSource: {fileID: 5107299364269770149}
   jumpPower: 5
 --- !u!54 &1647608499574590595
