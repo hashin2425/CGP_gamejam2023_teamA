@@ -283,7 +283,7 @@ Transform:
   m_GameObject: {fileID: 7300274}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -31.69, y: 1.7748, z: 0}
+  m_LocalPosition: {x: -5.7, y: 1.7748, z: -0}
   m_LocalScale: {x: 1, y: 7.6933966, z: 8.596916}
   m_ConstrainProportionsScale: 1
   m_Children: []
@@ -498,7 +498,7 @@ Transform:
   m_GameObject: {fileID: 330660750}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -3, y: 0.2, z: 0}
+  m_LocalPosition: {x: 3.8, y: 0.2, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -603,7 +603,7 @@ Transform:
   m_GameObject: {fileID: 409008018}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0.7071068, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: -25.267601, y: 1.7748, z: 4}
+  m_LocalPosition: {x: 0.72240067, y: 1.7748, z: 4}
   m_LocalScale: {x: 1, y: 7.6933966, z: 12.481863}
   m_ConstrainProportionsScale: 1
   m_Children: []
@@ -791,24 +791,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   spawnPoint:
   - {fileID: 330660750}
-  - {fileID: 1907308196}
-  - {fileID: 756423101}
   item:
-  - {fileID: 543214527472410043, guid: 8e74d24197d908641a90fcbd0f9642af, type: 3}
-  - {fileID: 4863839554688852148, guid: 00109c04264190c4190065c108a78924, type: 3}
-  - {fileID: 7329884436380258193, guid: f5be21db67b191748abc6c83539e4d4a, type: 3}
-  - {fileID: 3072045854676368474, guid: 7e5e854ed02527d4c8ba871bdb9df122, type: 3}
-  - {fileID: 1618043786700518141, guid: cde80b7f3563878409148a11fcfc34f5, type: 3}
-  - {fileID: 7085674889194124881, guid: fc31ba81e02576b4192948b601cd774a, type: 3}
-  - {fileID: 6556396788561753027, guid: fcdce48493a071b47b5e9ea17b373c56, type: 3}
-  - {fileID: 4158034283123238073, guid: 1d5bc3f62ed484840af98cc0ba237c33, type: 3}
-  - {fileID: 4358013298514713344, guid: eeefb7f43dd0b054e9a6f6f2074f1dfe, type: 3}
-  - {fileID: 3680837761625031656, guid: 2bfabfaba44053b4e93a56da3bbded2d, type: 3}
   - {fileID: 1538106965747630396, guid: 816680e38a2df2e4198dabed748810e9, type: 3}
-  - {fileID: 3226785605486474018, guid: 2c28aac9decdf45409058474a383097c, type: 3}
-  - {fileID: 7710639215178213230, guid: 5e298e3a9506ab346a0daa535148bc62, type: 3}
-  - {fileID: 8988745998474947345, guid: 189857534f8698e42ae6c3a08ba12338, type: 3}
-  - {fileID: 4549667311787958089, guid: 24e1624d529bbb846b217572e09c9673, type: 3}
 --- !u!1 &1204055945
 GameObject:
   m_ObjectHideFlags: 0
@@ -1002,7 +986,7 @@ Transform:
   m_GameObject: {fileID: 1777699546}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0.7071068, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: -25.161201, y: 1.7748, z: -3.84}
+  m_LocalPosition: {x: 0.8288002, y: 1.7748, z: -3.84}
   m_LocalScale: {x: 1, y: 7.6933966, z: 12.714839}
   m_ConstrainProportionsScale: 1
   m_Children: []
@@ -1184,6 +1168,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Catvoice: {fileID: 8300000, guid: 73f4abefae7dcd04d8bcc5a9a6f1bbe4, type: 3}
+  audioSource: {fileID: 0}
   isFound: 0
   mutekiTime: 3
 --- !u!1 &1607426320929811568
@@ -1786,7 +1771,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a33e5eef0a8c6244797f2e26a51b7533, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gManager: {fileID: 0}
 --- !u!114 &5840160895343307864
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1805,6 +1789,7 @@ MonoBehaviour:
   y_sensi: 1000
   Maincamera: {fileID: 8903677914667059394}
   anim: {fileID: 6604468641774060797}
+  audioSource: {fileID: 0}
   jumpPower: 5
 --- !u!4 &5897803961527229347
 Transform:
@@ -2134,7 +2119,7 @@ Transform:
   m_GameObject: {fileID: 2278115453176837191}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: -4.3, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -2392,7 +2377,7 @@ GameObject:
   - component: {fileID: 7163636254110554840}
   m_Layer: 2
   m_Name: Main Camera
-  m_TagString: MainCamera
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
