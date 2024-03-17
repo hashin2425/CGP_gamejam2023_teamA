@@ -87,7 +87,7 @@ public class NezumiController : MonoBehaviour
     public void RunAway()
     {
         
-        Debug.Log("逃げろ！");
+        //Debug.Log("逃げろ！");
 
         normal = false;
 
