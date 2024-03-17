@@ -67,10 +67,10 @@ public class EnemyActions : MonoBehaviour
     IEnumerator ChasePlayer()
     {
         isChase=true;
-         Debug.Log("oikaketeru");
+        //Debug.Log("oikaketeru");
         yield return new WaitForSeconds(chaseTime);
         isChase=false;
-        Debug.Log("minogasita");
+        //Debug.Log("minogasita");
     }
     private void MoveForward(float speed = 1.0f)
     {

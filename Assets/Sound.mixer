@@ -98,12 +98,12 @@ AudioMixerController:
   m_ExposedParameters:
   - guid: c6d38f39cadc08a429499d46ea520d02
     name: BGM
-  - guid: a8bf8603513315340879c641eecdfaf0
+  - guid: d9b78261494a28e459debf8c4aa220ef
+    name: Discovered_BGM
+  - guid: f5721194339583348adef3cf77eed1e5
     name: SE
   - guid: 7ef4b0274c2c4a14b814b399778dd1af
     name: UnDiscovered_BGM
-  - guid: d9b78261494a28e459debf8c4aa220ef
-    name: Discovered_BGM
   m_AudioMixerGroupViews:
   - guids:
     - d9aeb420214cfdd48acc3b393cf4080f
@@ -124,8 +124,8 @@ AudioMixerGroupController:
   m_AudioMixer: {fileID: 24100000}
   m_GroupID: d9aeb420214cfdd48acc3b393cf4080f
   m_Children:
-  - {fileID: 4157434244898062041}
   - {fileID: 5518262782600371364}
+  - {fileID: 4157434244898062041}
   m_Volume: a8bf8603513315340879c641eecdfaf0
   m_Pitch: ba1f39421be66dc4e8ac58c229a55bbf
   m_Send: 00000000000000000000000000000000

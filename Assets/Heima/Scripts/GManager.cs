@@ -157,9 +157,10 @@ public class GManager : MonoBehaviour
                 uiManager.ShowPauseUI(true);
                 Time.timeScale = 0;
                 Debug.Log("Pause");
-                //
+                //BGMを一時停止
                 DiscoveredAudioSource.Pause();
                 UndiscoveredAudioSource.Pause();
+                //カーソルを画面中央にロック
                 Cursor.lockState = CursorLockMode.Locked;
                 // カーソルを非表示にする
                 Cursor.visible = false;
@@ -169,6 +170,7 @@ public class GManager : MonoBehaviour
                 uiManager.ShowPauseUI(false);
                 Time.timeScale = 1;
                 Debug.Log("UnPause");
+                //BGMを再生
                 DiscoveredAudioSource.UnPause();
                 UndiscoveredAudioSource.UnPause();
                 //カーソルを表示
