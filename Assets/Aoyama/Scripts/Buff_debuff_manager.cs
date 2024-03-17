@@ -7,7 +7,7 @@ public class Buff_debuff_manager : MonoBehaviour
     [Header("PlayerController script")] public PlayerController playerCon;
     [Header("バフアイテム獲得時の効果音（シャキーン2）")] public AudioClip buffSE;
     [Header("デフアイテム獲得時の効果音（クイズ不正解）")] public AudioClip debuffSE;
-    [Header("通常アイテム各当時の効果音（ニュッ2）")] public AudioClip getItemSE;
+    [Header("通常アイテム獲得時の効果音（ニュッ2）")] public AudioClip getItemSE;
     [Header("猫じゃらし獲得時、止まる時間（デバフ）")] public float stopTime = 2f;
     [Header("マタタビ獲得時、上げる速度倍率（バフ）")] public float speedUp = 1.5f;
     [Header("マタタビ獲得時のバフ効果時間")] public float upTime = 10f;
