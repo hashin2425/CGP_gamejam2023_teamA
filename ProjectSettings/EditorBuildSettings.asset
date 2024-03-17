@@ -17,7 +17,7 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/Shimura/Scenes/Test_Heima.unity
     guid: e0743ad5ec1d4194fb7f43e255d422ee
-  - enabled: 1
+  - enabled: 0
     path: Assets/Shimura/Scenes/Test_Menu.unity
     guid: 8d8a27df8d85b62408d06a8ee9bd96c3
   - enabled: 1
