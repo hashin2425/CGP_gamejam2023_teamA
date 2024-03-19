@@ -11,6 +11,7 @@ public class TitleSound : MonoBehaviour
     //それぞれのスライダーを入れるとこです。。
     [SerializeField] Slider BGMSlider;
     [SerializeField] Slider SESlider;
+    [SerializeField] Slider SensitivitySlider;
 
     private void Start()
     {
@@ -22,6 +23,9 @@ public class TitleSound : MonoBehaviour
         //SE
         audioMixer.GetFloat("SE", out float seVolume);
         SESlider.value = seVolume;
+        //Sensitivity
+        audioMixer.GetFloat("Sensitivity", out float SensitivityVolume);
+        SensitivitySlider.value = SensitivityVolume;
     }
     
     public void SetBGM(float volume)
@@ -32,5 +36,10 @@ public class TitleSound : MonoBehaviour
     public void SetSE(float volume)
     {
         audioMixer.SetFloat("SE", volume);
+    }
+
+    public void SetSensitivity(float volume)
+    {
+        audioMixer.SetFloat("Sensitivity", volume);
     }
 }

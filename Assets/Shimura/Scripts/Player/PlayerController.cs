@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Audio;
 
 public class PlayerController : MonoBehaviour
 {
@@ -12,6 +13,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField] Animator anim;
     //[SerializeField] AudioClip footsteps;
     [SerializeField] AudioSource audioSource;
+    [SerializeField] AudioMixer audioMixer;
     float runspeed; // これはrunSPEEDと違う
     Rigidbody rb;
     bool isJumping = false;
@@ -101,8 +103,9 @@ public class PlayerController : MonoBehaviour
     //視点操作の関数
     void CAMERAmove()
     {
-        float x_Rotation = Input.GetAxis("Mouse X");
-        float y_Rotation = Input.GetAxis("Mouse Y");
+        audioMixer.GetFloat("Sensitivity", out float Sensitivity);
+        float x_Rotation = Input.GetAxis("Mouse X") * Sensitivity * 0.2f;//sensitivityの初期値を5にしたため1にするため0.2倍
+        float y_Rotation = Input.GetAxis("Mouse Y") * Sensitivity * 0.2f;
         x_Rotation = x_Rotation * x_sensi * Time.deltaTime;
         y_Rotation = y_Rotation * y_sensi * Time.deltaTime;
         this.transform.Rotate(0, x_Rotation, 0);
